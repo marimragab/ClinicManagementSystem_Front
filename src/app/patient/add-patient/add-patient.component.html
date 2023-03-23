@@ -1,0 +1,102 @@
+<div class="col-8">
+  <form id="addPatientForm">
+    <div class="mb-2">
+      <label for="patientSSN" class="form-label">Patient SSN</label>
+      <input
+        type="text"
+        name="SSN"
+        class="form-control"
+        id="patientSSN"
+        [(ngModel)]="newPatient.SSN"
+      />
+    </div>
+
+    <div class="mb-2">
+      <label for="patientFName" class="form-label">First Name</label>
+      <input
+        type="text"
+        name="fname"
+        class="form-control mb-2"
+        id="patientFName"
+        [(ngModel)]="newPatient.firstName"
+      />
+    </div>
+
+    <div class="mb-2">
+      <label for="patientFName" class="form-label">Last Name</label>
+      <input
+        type="text"
+        name="lname"
+        class="form-control mb-2"
+        id="patientLName"
+        [(ngModel)]="newPatient.lastName"
+      />
+    </div>
+
+    <div class="mb-2">
+      <label for="patientAge" class="form-label">Age</label>
+      <input
+        type="number"
+        name="age"
+        class="form-control mb-2"
+        id="patientAge"
+        [(ngModel)]="newPatient.age"
+      />
+    </div>
+
+    <div class="mb-2">
+      <label for="patientAddress" class="form-label">Address</label>
+      <input
+        type="text"
+        name="city"
+        class="form-control mb-2"
+        id="city"
+        [(ngModel)]="newPatient.address.city"
+      />
+      <input
+        type="text"
+        name="street"
+        class="form-control mb-2"
+        id="street"
+        [(ngModel)]="newPatient.address.street"
+      />
+      <input
+        type="text"
+        name="building"
+        class="form-control mb-2"
+        id="building"
+        [(ngModel)]="newPatient.address.building"
+      />
+    </div>
+
+    <div class="mb-2">
+      <label for="patientEmail" class="form-label">Email</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control mb-2"
+        id="patientEmail"
+        [(ngModel)]="newPatient.email"
+      />
+    </div>
+
+    <div class="mb-2">
+      <label for="patientPassword" class="form-label">Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control mb-2"
+        id="patientPassword"
+        [(ngModel)]="newPatient.password"
+      />
+    </div>
+
+    <button
+      class="btn btn-primary mb-2"
+      (click)="addPatient()"
+      [disabled]="buttonDisabled"
+    >
+      Add
+    </button>
+  </form>
+</div>
