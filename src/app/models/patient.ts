@@ -12,9 +12,9 @@ export class Patient {
     public lastName: string,
     public age: number,
     public address: IAddress,
-    public phone: string,
     public email: string,
     public password: string,
+    public phone?: string,
     public availability?: boolean
   ) {}
 }
