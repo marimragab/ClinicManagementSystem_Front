@@ -1,9 +1,29 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Invoice } from '../models/invoice';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InvoiceService {
+  constructor(private http: HttpClient) {}
+  dbUrl: string = 'http://localhost:8080/invoices/';
 
-  constructor() { }
+  //Admin Only
+  getAllInvoices() {
+    return this.http.get<Invoice[]>(this.dbUrl);
+  }
+
+  addInvoice(newInvoice: Invoice) {
+    return this.http.post<Invoice>(this.dbUrl, newInvoice);
+  }
+
+  //Admin or Patient
+  getInvoiceById(id: number) {
+    return this.http.get<Invoice>(this.dbUrl + id);
+  }
+
+  deleteInvoiceById(id: number) {
+    return this.http.delete(this.dbUrl + id);
+  }
 }
