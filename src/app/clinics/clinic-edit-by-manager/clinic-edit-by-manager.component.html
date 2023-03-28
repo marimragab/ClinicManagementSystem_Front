@@ -1,0 +1,25 @@
+<div class="alert alert-info">
+
+    <label>city</label>
+    <input type="text" [(ngModel)]="clinic.location.city">
+    <br>
+    <label>street</label>
+    <input type="text" [(ngModel)]="clinic.location.street">
+    <br>
+    <label>building</label>
+    <input type="text" [(ngModel)]="clinic.location.building">
+    <br>
+    <label>mobilePhone</label>
+    <input type="text" [(ngModel)]="clinic.mobilePhone">
+    <br>
+    <label>Doctor</label>
+    <select [(ngModel)]="clinic.doctors"  >
+        <option value="10" >0</option>
+        <option value="20">2</option>
+        <option value="30">3</option>
+        <option value="40">4</option>
+    </select>
+    <br>
+    
+    <button (click)="update()">update</button>
+</div>

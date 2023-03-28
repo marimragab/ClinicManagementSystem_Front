@@ -1,0 +1,45 @@
+< <div class="alert alert-info">
+    <!-- ["firstName", "lastName", "age", "address", "phone"]  -->
+    <!-- ["firstName", "lastName", "age", "address", "phone", "job", "clinic", "salary", "availability"] -->
+      <label>firstName</label>
+       <input type="text" [(ngModel)]="emp.firstName">
+       <br>
+       <label>lastName</label>
+       <input type="text" [(ngModel)]="emp.lastName">
+       <br>
+       <label>age</label>
+       <input type="text" [(ngModel)]="emp.age">
+       <br>
+       <label>city</label>
+       <input type="text" [(ngModel)]="emp.address.city">
+       <br>
+       <br>
+       <label>street</label>
+       <input type="text" [(ngModel)]="emp.address.street">
+       <br>
+       <br>
+       <label>building</label>
+       <input type="text" [(ngModel)]="emp.address.building">
+       <br>
+       <br>
+       <label>phone</label>
+       <input type="text" [(ngModel)]="emp.phone">
+       <br>
+       <br>
+       <label>job</label>
+       <input type="text" [(ngModel)]="emp.job">
+       <br>
+       <br>
+       <label>clinic</label>
+       <input type="text" [(ngModel)]="emp.clinic">
+       <br>
+       <br>
+       <label>salary</label>
+       <input type="text" [(ngModel)]="emp.salary">
+       <br>
+       <br>
+       <label>availability</label>
+       <input type="text" [(ngModel)]="emp.availability">
+       <br>
+       <button (click)="update()">update</button>
+   </div> 
