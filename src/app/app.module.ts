@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppointmentModule } from './appointment/appointment.module';
 import { InvoiceModule } from './invoice/invoice.module';
 import { PatientModule } from './patient/patient.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { PatientModule } from './patient/patient.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     AppointmentModule,
     PatientModule,
     InvoiceModule,

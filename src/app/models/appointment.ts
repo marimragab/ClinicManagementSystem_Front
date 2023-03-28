@@ -6,6 +6,7 @@ export class Appointment {
     public patient: number,
     public date: string,
     public timeFrom: string,
-    public timeTo: string
+    public timeTo: string,
+    public booked: boolean
   ) {}
 }
