@@ -17,7 +17,7 @@ export class AppointmentService {
     return this.http.get<Appointment>(this.dbUrl + id);
   }
 
-  addPatient(newAppointment: Appointment) {
+  addAppointment(newAppointment: Appointment) {
     return this.http.post<Appointment>(this.dbUrl, newAppointment);
   }
 
