@@ -3,7 +3,7 @@
   <form
     id="addPatientForm"
     [formGroup]="addPatientForm"
-    (ngSubmit)="onAddingPatient()"
+    (ngSubmit)="addPatient(addPatientForm.value)"
   >
     <div class="mb-2">
       <label for="patientSSN" class="form-label">SSN</label>
@@ -12,25 +12,17 @@
         formControlName="SSN"
         class="form-control"
         id="patientSSN"
-        [(ngModel)]="newPatient.SSN"
       />
       <div
         *ngIf="
-          addPatientForm.controls['SSN'].invalid &&
-          (addPatientForm.controls['SSN'].dirty ||
-            addPatientForm.controls['SSN'].touched)
+          patientValues['SSN'].invalid &&
+          (patientValues['SSN'].dirty || patientValues['SSN'].touched)
         "
       >
-        <div
-          class="errors"
-          *ngIf="addPatientForm.controls['SSN'].errors['required']"
-        >
+        <div class="errors" *ngIf="patientValues['SSN'].errors['required']">
           SSN is required.
         </div>
-        <div
-          class="errors"
-          *ngIf="addPatientForm.controls['SSN'].errors['pattern']"
-        >
+        <div class="errors" *ngIf="patientValues['SSN'].errors['pattern']">
           Invalid SSN, should be 14 numbers.
         </div>
       </div>
@@ -40,37 +32,31 @@
       <label for="patientFName" class="form-label">First Name</label>
       <input
         type="text"
-        formControlName="firstname"
+        formControlName="firstName"
         class="form-control mb-2"
         id="patientFName"
-        [(ngModel)]="newPatient.firstName"
       />
       <div
         *ngIf="
-          addPatientForm.controls['firstname'].invalid &&
-          (addPatientForm.controls['firstname'].dirty ||
-            addPatientForm.controls['firstname'].touched)
+          patientValues['firstName'].invalid &&
+          (patientValues['firstName'].dirty ||
+            patientValues['firstName'].touched)
         "
       >
         <div
           class="errors"
-          *ngIf="addPatientForm.controls['firstname'].errors['required']"
+          *ngIf="patientValues['firstName']?.errors['required']"
         >
           First Name is required.
         </div>
         <div
           class="errors"
-          *ngIf="addPatientForm.controls['firstname'].errors['minlength']"
+          *ngIf="patientValues['firstName'].errors['minlength']"
         >
-          Minlength is
-          {{
-            addPatientForm.controls["firstname"].errors["minlength"]
-              .requiredLength
-          }}, you entered
-          {{
-            addPatientForm.controls["firstname"].errors["minlength"]
-              .actualLength
-          }}
+          FirstName Minlength is
+          {{ patientValues["firstName"].errors["minlength"].requiredLength }},
+          you entered
+          {{ patientValues["firstName"].errors["minlength"].actualLength }}
         </div>
       </div>
     </div>
@@ -79,36 +65,30 @@
       <label for="patientFName" class="form-label">Last Name</label>
       <input
         type="text"
-        formControlName="lastname"
+        formControlName="lastName"
         class="form-control mb-2"
         id="patientLName"
-        [(ngModel)]="newPatient.lastName"
       />
       <div
         *ngIf="
-          addPatientForm.controls['lastname'].invalid &&
-          (addPatientForm.controls['lastname'].dirty ||
-            addPatientForm.controls['lastname'].touched)
+          patientValues['lastName'].invalid &&
+          (patientValues['lastName'].dirty || patientValues['lastName'].touched)
         "
       >
         <div
           class="errors"
-          *ngIf="addPatientForm.controls['lastname'].errors['required']"
+          *ngIf="patientValues['lastName']?.errors['required']"
         >
           First Name is required.
         </div>
         <div
           class="errors"
-          *ngIf="addPatientForm.controls['lastname'].errors['minlength']"
+          *ngIf="patientValues['lastName']?.errors['minlength']"
         >
           Minlength is
-          {{
-            addPatientForm.controls["lastname"].errors["minlength"]
-              .requiredLength
-          }}, you entered
-          {{
-            addPatientForm.controls["lastname"].errors["minlength"].actualLength
-          }}
+          {{ patientValues["lastName"]?.errors["minlength"].requiredLength }},
+          you entered
+          {{ patientValues["lastName"]?.errors["minlength"].actualLength }}
         </div>
       </div>
     </div>
@@ -120,31 +100,23 @@
         formControlName="age"
         class="form-control mb-2"
         id="patientAge"
-        [(ngModel)]="newPatient.age"
       />
       <div
         *ngIf="
-          addPatientForm.controls['age'].invalid &&
-          (addPatientForm.controls['age'].dirty ||
-            addPatientForm.controls['age'].touched)
+          patientValues['age'].invalid &&
+          (patientValues['age'].dirty || patientValues['age'].touched)
         "
       >
-        <div
-          class="errors"
-          *ngIf="addPatientForm.controls['age'].errors['required']"
-        >
+        <div class="errors" *ngIf="patientValues['age'].errors['required']">
           Age is required.
         </div>
-        <div
-          class="errors"
-          *ngIf="addPatientForm.controls['age'].errors['min']"
-        >
+        <div class="errors" *ngIf="patientValues['age'].errors['min']">
           Age must be 5 or greater
         </div>
       </div>
     </div>
 
-    <div class="mb-2">
+    <div class="mb-2" formGroupName="address">
       <label for="patientAddress" class="form-label">Address</label>
       <div class="row">
         <div class="col-4">
@@ -154,18 +126,17 @@
             formControlName="city"
             class="form-control mb-2"
             id="city"
-            [(ngModel)]="newPatient.address.city"
           />
           <div
             *ngIf="
-              addPatientForm.controls['city'].invalid &&
-              (addPatientForm.controls['city'].dirty ||
-                addPatientForm.controls['city'].touched)
+              patientValues.address.controls['city'].invalid &&
+              (patientValues.address.controls['city'].dirty ||
+                patientValues.address.controls['city'].touched)
             "
           >
             <div
               class="errors"
-              *ngIf="addPatientForm.controls['city'].errors['required']"
+              *ngIf="patientValues.address.controls['city'].errors['required']"
             >
               City is required.
             </div>
@@ -178,18 +149,20 @@
             formControlName="street"
             class="form-control mb-2"
             id="street"
-            [(ngModel)]="newPatient.address.street"
+            name=""
           />
           <div
             *ngIf="
-              addPatientForm.controls['street'].invalid &&
-              (addPatientForm.controls['street'].dirty ||
-                addPatientForm.controls['street'].touched)
+              patientValues.address.controls['street'].invalid &&
+              (patientValues.address.controls['street'].dirty ||
+                patientValues.address.controls['street'].touched)
             "
           >
             <div
               class="errors"
-              *ngIf="addPatientForm.controls['street'].errors['required']"
+              *ngIf="
+                patientValues.address.controls['street'].errors['required']
+              "
             >
               Street is required.
             </div>
@@ -203,18 +176,19 @@
             formControlName="building"
             class="form-control mb-2"
             id="building"
-            [(ngModel)]="newPatient.address.building"
           />
           <div
             *ngIf="
-              addPatientForm.controls['building'].invalid &&
-              (addPatientForm.controls['building'].dirty ||
-                addPatientForm.controls['building'].touched)
+              patientValues.address.controls['building'].invalid &&
+              (patientValues.address.controls['building'].dirty ||
+                patientValues.address.controls['building'].touched)
             "
           >
             <div
               class="errors"
-              *ngIf="addPatientForm.controls['building'].errors['required']"
+              *ngIf="
+                patientValues.address.controls['building'].errors['required']
+              "
             >
               Building Number is required.
             </div>
@@ -229,25 +203,17 @@
         formControlName="phone"
         class="form-control mb-2"
         id="patientPhone"
-        [(ngModel)]="newPatient.phone"
       />
       <div
         *ngIf="
-          addPatientForm.controls['phone'].invalid &&
-          (addPatientForm.controls['phone'].dirty ||
-            addPatientForm.controls['phone'].touched)
+          patientValues['phone'].invalid &&
+          (patientValues['phone'].dirty || patientValues['phone'].touched)
         "
       >
-        <div
-          class="errors"
-          *ngIf="addPatientForm.controls['phone'].errors['required']"
-        >
+        <div class="errors" *ngIf="patientValues['phone'].errors['required']">
           Phone Number is required.
         </div>
-        <div
-          class="errors"
-          *ngIf="addPatientForm.controls['phone'].errors['pattern']"
-        >
+        <div class="errors" *ngIf="patientValues['phone'].errors['pattern']">
           Invalid phone number
         </div>
       </div>
@@ -260,25 +226,17 @@
         formControlName="email"
         class="form-control mb-2"
         id="patientEmail"
-        [(ngModel)]="newPatient.email"
       />
       <div
         *ngIf="
-          addPatientForm.controls['email'].invalid &&
-          (addPatientForm.controls['email'].dirty ||
-            addPatientForm.controls['email'].touched)
+          patientValues['email'].invalid &&
+          (patientValues['email'].dirty || patientValues['email'].touched)
         "
       >
-        <div
-          class="errors"
-          *ngIf="addPatientForm.controls['email'].errors['required']"
-        >
+        <div class="errors" *ngIf="patientValues['email'].errors['required']">
           Email is required.
         </div>
-        <div
-          class="errors"
-          *ngIf="addPatientForm.controls['email'].errors['email']"
-        >
+        <div class="errors" *ngIf="patientValues['email'].errors['email']">
           Invalid email format.
         </div>
       </div>
@@ -291,25 +249,20 @@
         formControlName="password"
         class="form-control mb-2"
         id="patientPassword"
-        [(ngModel)]="newPatient.password"
       />
       <div
         *ngIf="
-          addPatientForm.controls['password'].invalid &&
-          (addPatientForm.controls['password'].dirty ||
-            addPatientForm.controls['password'].touched)
+          patientValues['password'].invalid &&
+          (patientValues['password'].dirty || patientValues['password'].touched)
         "
       >
         <div
           class="errors"
-          *ngIf="addPatientForm.controls['password'].errors['required']"
+          *ngIf="patientValues['password'].errors['required']"
         >
           Password is required.
         </div>
-        <div
-          class="errors"
-          *ngIf="addPatientForm.controls['password'].errors['pattern']"
-        >
+        <div class="errors" *ngIf="patientValues['password'].errors['pattern']">
           Password should be be at least 8 characters long and contain at least
           one lowercase letter, one uppercase letter, one number, and one
           special character
