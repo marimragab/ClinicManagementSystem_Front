@@ -42,67 +42,75 @@
         <div class="row" id="0">
         <div class="form-group col-xs-2"> -->
 <div class="form">
-    <div mat-dialog-title>
-        <h1>Clinic Form</h1>
+  <div mat-dialog-title>
+    <h1>Clinic Form</h1>
+  </div>
+  <form [formGroup]="reactiveForm" (ngSubmit)="save(reactiveForm.value)">
+    <div mat-dialog-content>
+      <div class="mb-2" formGroupName="location">
+        <div class="row">
+          <div class="form-group col-xs-3">
+            <mat-form-field appearance="outline">
+              <mat-label>City</mat-label>
+              <input matInput type="text" formControlName="city" />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Street</mat-label>
+              <input matInput type="text" formControlName="street" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Building</mat-label>
+              <input matInput type="text" formControlName="building" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-2">
+          <mat-form-field appearance="outline">
+            <mat-label>MobilePhone</mat-label>
+            <input matInput type="text" formControlName="mobilePhone" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-xs-2">
+          <mat-form-field appearance="outline">
+            <mat-label>Doctors</mat-label>
+            <mat-select formControlName="doctors" multiple>
+              <mat-option *ngFor="let val of doctor" [value]="val">{{
+                val
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Manager</mat-label>
+            <mat-select formControlName="manager">
+              <mat-option *ngFor="let val of manager" [value]="val">
+                {{ val }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-xs-2">
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="availability"
+          >
+            <mat-label><b>Availability</b></mat-label>
+            <mat-radio-button value="true">true</mat-radio-button>
+            <mat-radio-button value="false">false</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
     </div>
-    <!-- <form [FormGroup]="reactiveForm"> -->
-        <div mat-dialog-content >
-            <div class="row">
-                <div class="form-group col-xs-2">
-                    <mat-form-field appearance="outline">
-                        <mat-label>City</mat-label>
-                        <input matInput type="text" [(ngModel)]="clinic.location.city" formControlName="city">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Street</mat-label>
-                        <input matInput type="text" [(ngModel)]="clinic.location.street">
-                    </mat-form-field>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-xs-2">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Building</mat-label>
-                        <input matInput type="text" [(ngModel)]="clinic.location.building">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>MobilePhone</mat-label>
-                        <input matInput type="text" [(ngModel)]="clinic.mobilePhone">
-                    </mat-form-field>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-xs-2">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Doctors</mat-label>
-                        <mat-select [(ngModel)]="clinic.doctors" multiple>
-                            <mat-option *ngFor="let val of doctor" [value]="val">{{val}}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Manager</mat-label>
-                        <mat-select [(ngModel)]="clinic.manager">
-                            <mat-option *ngFor="let val of manager" [value]="val">
-                                {{val}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-xs-2">
-                    <mat-radio-group aria-label="Select an option">
-                        <mat-label><b>Availability</b></mat-label>
-                        <mat-radio-button value="clinic.availability.true">true</mat-radio-button>
-                        <mat-radio-button value="clinic.availability.false">false</mat-radio-button>
-                    </mat-radio-group>
-                </div>
-            </div>
-        </div>
-        <div mat-dialog-actions>
-            <button mat-raised-button>Cancel</button>
-            <button mat-raised-button color="primary" (click)="save()">Save</button>
-        </div>
-<!--    
-    </form> -->
+    <div mat-dialog-actions>
+      <button mat-raised-button>Cancel</button>
+      <button mat-raised-button color="primary">Save</button>
+    </div>
+  </form>
 </div>

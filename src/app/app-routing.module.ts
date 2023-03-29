@@ -11,26 +11,38 @@ import { EmployeesDetailsComponent } from './employees/employees-details/employe
 import { EmployeesAddComponent } from './employees/employees-add/employees-add.component';
 import { EmployeesUpdateComponent } from './employees/employees-update/employees-update.component';
 import { EmployessUpdateByManagerComponent } from './employees/employess-update-by-manager/employess-update-by-manager.component';
+import { ListPatientsComponent } from './patient/list-patients/list-patients.component';
 //import { ClinicUpdateByManagerComponent } from './clinics/clinic-update-by-manager/clinic-update-by-manager.component';
 
 const routes: Routes = [
-  {path:"clinics",component:ClinicsListComponent},
-  {path:"clinics/details/:id",component:ClinicsDetailsComponent},
-  {path:"clinics/add",component:ClinicsAddComponent},
-  {path:"clinics/editbyadmin/:id",component:ClinicEditByAdminComponent},
-  {path:"clinics/editbymanager/:id",component:ClinicEditByManagerComponent},
+  { path: 'clinics', component: ClinicsListComponent },
+  { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
+  { path: 'clinics/add', component: ClinicsAddComponent },
+  { path: 'clinics/editbyadmin/:id', component: ClinicEditByAdminComponent },
+  {
+    path: 'clinics/editbymanager/:id',
+    component: ClinicEditByManagerComponent,
+  },
+  {
+    path: 'patient',
+    loadChildren: () =>
+      import('./patient/patient.module').then((m) => m.PatientModule),
+  },
   //{path:"clinics/editbymanager/:id",component:ClinicUpdateByManagerComponent},
   // {path:"employees",loadChildren:()=>import("./employees/employees.module").then(m=>m.EmployeesModule)},
-  
-   {path:"employees",component:EmployeesListComponent},
-  {path:"employees/details/:id",component:EmployeesDetailsComponent},
-  {path:"employees/add",component:EmployeesAddComponent},
-  {path:"employees/edit/:id",component:EmployeesUpdateComponent},
-  {path:"employees/editbymanager/:id",component:EmployessUpdateByManagerComponent}
+
+  { path: 'employees', component: EmployeesListComponent },
+  { path: 'employees/details/:id', component: EmployeesDetailsComponent },
+  { path: 'employees/add', component: EmployeesAddComponent },
+  { path: 'employees/edit/:id', component: EmployeesUpdateComponent },
+  {
+    path: 'employees/editbymanager/:id',
+    component: EmployessUpdateByManagerComponent,
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),CommonModule],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes), CommonModule],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { PatientService } from 'src/app/services/patient.service';
+import { PatientService } from 'src/app/_services/patient.service';
 
 @Component({
   selector: 'app-add-patient',

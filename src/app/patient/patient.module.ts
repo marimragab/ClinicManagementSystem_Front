@@ -12,6 +12,7 @@ import { ListPatientsComponent } from './list-patients/list-patients.component';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { MatButtonModule, MatIconButton } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    RouterModule,
   ],
   exports: [
     AddPatientComponent,

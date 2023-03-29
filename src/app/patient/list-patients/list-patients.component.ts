@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
-import { PatientService } from 'src/app/services/patient.service';
+import { PatientService } from 'src/app/_services/patient.service';
 
 @Component({
   selector: 'app-list-patients',
@@ -47,4 +47,6 @@ export class ListPatientsComponent implements OnInit {
   getRowData(row: any) {
     console.log(row);
   }
+
+  deletePatient(id: number) {}
 }

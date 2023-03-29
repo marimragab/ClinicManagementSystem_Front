@@ -6,9 +6,9 @@ import {
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
 
-import { AppointmentService } from 'src/app/services/appointment.service';
-import { ClinicService } from 'src/app/services/clinic.service';
-import { DoctorService } from 'src/app/services/doctor.service';
+import { AppointmentService } from 'src/app/_services/appointment.service';
+import { ClinicService } from 'src/app/_services/clinic.service';
+import { DoctorService } from 'src/app/_services/doctor.service';
 
 const MY_DATE_FORMATS = {
   parse: {
