@@ -21,11 +21,8 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "bootstrap": "^5.2.3",
-<<<<<<< HEAD
     "font-awesome": "^4.7.0",
-=======
     "ngx-mat-timepicker": "^15.1.6",
->>>>>>> 9500191228375135249ac02f0c07e5e53189053a
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

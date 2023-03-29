@@ -5,21 +5,22 @@
 </button> -->
 <div>
 
-    <!-- <app-header></app-header> -->
+    <app-header></app-header>
+    <app-panel></app-panel>
     <!-- <app-left-panel></app-left-panel> -->
-   
-  
+    <div class="container col-6">
+      <app-add-appointment></app-add-appointment>
+    </div>
+<!--   
 <a [routerLink]="['/clinics']">clinic</a>
 <hr>
-<a [routerLink]="['/employees']">employees</a>
+<a [routerLink]="['/employees']">employees</a> -->
 <router-outlet></router-outlet>
 </div>
 <!-- <app-patient-details></app-patient-details>  -->
-<div class="container col-8">
+<!-- <div class="container col-8"> -->
   <!-- <app-add-patient></app-add-patient> -->
-</div>
+<!-- </div> -->
 <!-- <app-list-patients></app-list-patients> -->
 
-<div class="container col-6">
-  <app-add-appointment></app-add-appointment>
-</div>
+

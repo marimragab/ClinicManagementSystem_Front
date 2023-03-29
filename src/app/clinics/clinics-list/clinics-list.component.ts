@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Clinics } from 'src/app/_models/clinics';
-import { address } from 'src/app/_models/clinics';
-import { ClinicServicesService } from 'src/app/_services/clinic-services.service';
+import { Clinics } from 'src/app/models/clinics';
+import { address } from 'src/app/models/clinics';
+import { ClinicServicesService } from 'src/app/services/clinic-services.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
