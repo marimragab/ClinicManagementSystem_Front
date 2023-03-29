@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+  about(){
+    document.getElementById("about").scrollIntoView({behavior:"smooth"});
+  }
+  appointment(){
+    document.getElementById("appointment").scrollIntoView({behavior:"smooth"});
+  }
 }

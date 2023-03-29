@@ -27,6 +27,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     EmployeesModule,
     ClinicsModule,
+    AppointmentModule,
     MatSlideToggleModule,
     BrowserModule,
     AppRoutingModule,

@@ -8,14 +8,23 @@
     <app-header></app-header>
     <app-panel></app-panel>
     <!-- <app-left-panel></app-left-panel> -->
-    <div class="container col-6">
-      <app-add-appointment></app-add-appointment>
-    </div>
-<!--   
-<a [routerLink]="['/clinics']">clinic</a>
+    <div class="page-section">
+      <div class="container">
+        <h1 id="appointment" class="text-center wow fadeInUp">Make an Appointment</h1>
+        <div class="container col-6">
+          <a [routerLink]="['/appointment']"></a>
+          <app-add-appointment></app-add-appointment>
+        </div>
+        
+      </div>
+    </div> <!-- .page-section -->
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  
+<!-- <a [routerLink]="['/clinics']">clinic</a>
 <hr>
 <a [routerLink]="['/employees']">employees</a> -->
-<router-outlet></router-outlet>
+
 </div>
 <!-- <app-patient-details></app-patient-details>  -->
 <!-- <div class="container col-8"> -->

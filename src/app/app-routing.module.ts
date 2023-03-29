@@ -11,6 +11,10 @@ import { EmployeesDetailsComponent } from './employees/employees-details/employe
 import { EmployeesAddComponent } from './employees/employees-add/employees-add.component';
 import { EmployeesUpdateComponent } from './employees/employees-update/employees-update.component';
 import { EmployessUpdateByManagerComponent } from './employees/employess-update-by-manager/employess-update-by-manager.component';
+import { AddAppointmentComponent } from './appointment/add-appointment/add-appointment.component';
+import { AppointmentDetailsComponent } from './appointment/appointment-details/appointment-details.component';
+import { UpdateAppointmentComponent } from './appointment/update-appointment/update-appointment.component';
+import { ListAppointmentsComponent } from './appointment/list-appointments/list-appointments.component';
 //import { ClinicUpdateByManagerComponent } from './clinics/clinic-update-by-manager/clinic-update-by-manager.component';
 
 const routes: Routes = [
@@ -26,7 +30,14 @@ const routes: Routes = [
   {path:"employees/details/:id",component:EmployeesDetailsComponent},
   {path:"employees/add",component:EmployeesAddComponent},
   {path:"employees/edit/:id",component:EmployeesUpdateComponent},
-  {path:"employees/editbymanager/:id",component:EmployessUpdateByManagerComponent}
+  {path:"employees/editbymanager/:id",component:EmployessUpdateByManagerComponent},
+
+
+  {path:"appointment",component:AddAppointmentComponent},
+  {path:"appointment/details/:id",component:AppointmentDetailsComponent},
+  {path:"appointment/add",component:AddAppointmentComponent},
+  {path:"appointment/edit/:id",component:UpdateAppointmentComponent},
+  {path:"appointment/list",component:ListAppointmentsComponent}
 ];
 
 @NgModule({
