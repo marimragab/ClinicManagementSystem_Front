@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
 import { PatientService } from 'src/app/_services/patient.service';
+import { Patient } from 'src/app/_models/patient';
 
 @Component({
   selector: 'app-list-patients',
@@ -21,6 +22,7 @@ export class ListPatientsComponent implements OnInit {
     'action',
   ];
   dataSource: any;
+  patients: Patient[];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
@@ -32,8 +34,9 @@ export class ListPatientsComponent implements OnInit {
   getAllPatients() {
     this.patientService.getAllPatients().subscribe((data: any) => {
       console.log(data.Data);
+      this.patients = data.Data;
       // this.dataSource = data.Data;
-      this.dataSource = new MatTableDataSource(data.Data);
+      this.dataSource = new MatTableDataSource(this.patients);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
@@ -48,5 +51,17 @@ export class ListPatientsComponent implements OnInit {
     console.log(row);
   }
 
-  deletePatient(id: number) {}
+  deletePatient(id: number) {
+    if (confirm('Are you sure?')) {
+      this.patientService.deletePatientById(id).subscribe((data) => {
+        console.log(data === 'deleted');
+        console.log(data);
+
+        let indexToRemove = this.patients.findIndex(
+          (patient) => patient._id === id
+        );
+        this.patients.splice(indexToRemove, 1);
+      });
+    }
+  }
 }

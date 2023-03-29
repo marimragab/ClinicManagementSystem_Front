@@ -14,6 +14,9 @@ import { UpdateAppointmentComponent } from './update-appointment/update-appointm
 import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
 import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,10 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
     MatDatepickerModule,
     MatIconModule,
     MatButtonModule,
+    MatTableModule,
+    MatSelectModule,
+    MatPaginatorModule,
+    RouterModule,
     NgxMatTimepickerModule.setLocale('en-GB'),
   ],
   exports: [

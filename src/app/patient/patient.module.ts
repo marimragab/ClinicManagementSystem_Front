@@ -5,6 +5,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { UpdatePatientComponent } from './update-patient/update-patient.component';
@@ -13,6 +14,7 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
 import { MatButtonModule, MatIconButton } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterModule } from '@angular/router';
+import { PatientRoutingModule } from './patient-routing.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
     RouterModule,
+    PatientRoutingModule,
   ],
   exports: [
     AddPatientComponent,
