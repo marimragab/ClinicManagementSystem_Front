@@ -2,19 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { LeftPanelComponent } from './left-panel/left-panel.component';
-
+import { PanelComponent } from './panel/panel.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    LeftPanelComponent
+    
+    PanelComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,RouterModule
   ],
-  exports:[HeaderComponent,FooterComponent,LeftPanelComponent]
+  exports:[HeaderComponent,FooterComponent,PanelComponent]
 })
 export class CoreModule { }

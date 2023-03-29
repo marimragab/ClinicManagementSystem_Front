@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { address, Clinics } from 'src/app/_models/clinics';
-import { Employee } from 'src/app/_models/employee';
-import { EmployeeService } from 'src/app/_services/employee.service';
+import { address, Clinics } from 'src/app/models/clinics';
+import { Employee } from 'src/app/models/employee';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
   selector: 'app-employees-add',

@@ -8,7 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-
+import {RouterModule} from '@angular/router'
 import { AddAppointmentComponent } from './add-appointment/add-appointment.component';
 import { UpdateAppointmentComponent } from './update-appointment/update-appointment.component';
 import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
@@ -28,6 +28,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     MatFormFieldModule,
+    RouterModule,
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Clinics } from 'src/app/_models/clinics';
-import { ClinicServicesService } from 'src/app/_services/clinic-services.service';
+import { Clinics } from 'src/app/models/clinics';
+import { ClinicServicesService } from 'src/app/services/clinic-services.service';
 
 @Component({
   selector: 'app-clinic-edit-by-manager',

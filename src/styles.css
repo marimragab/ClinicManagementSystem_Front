@@ -1,6 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "../node_modules/font-awesome/css/font-awesome.css";
+@import "./assets/css/bootstrap.css";
+@import "./assets/css/maicons.css";
+@import "./assets/css/theme.css";
+@import "./assets/vendor/animate/animate.css";
+/* @import "./assets/vendor/owl-carousel/css/owl.carousel.css"; */
 
+/* @import "./assets/css/bootstrap.css";
+@import "./assets/css/maicons.css";
+@import "./assets/css/theme.css";
+@import "./assets/vendor/animate/animate.css";
+@import "./assets/vendor/owl-carousel/css/owl.carousel.css"; */
+/* @import "./assets/img/bg-doctor.png"; */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+

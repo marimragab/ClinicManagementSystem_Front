@@ -32,6 +32,7 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     EmployeesModule,
     ClinicsModule,
+    AppointmentModule,
     MatSlideToggleModule,
     BrowserModule,
     AppRoutingModule,
