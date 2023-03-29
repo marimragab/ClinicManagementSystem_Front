@@ -8,7 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import {RouterModule} from '@angular/router'
+import { RouterModule } from '@angular/router';
 import { AddAppointmentComponent } from './add-appointment/add-appointment.component';
 import { UpdateAppointmentComponent } from './update-appointment/update-appointment.component';
 import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
@@ -16,7 +16,6 @@ import { AppointmentDetailsComponent } from './appointment-details/appointment-d
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [

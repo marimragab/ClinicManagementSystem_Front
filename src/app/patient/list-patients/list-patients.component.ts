@@ -3,8 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
-import { PatientService } from 'src/app/_services/patient.service';
-import { Patient } from 'src/app/_models/patient';
+import { PatientService } from 'src/app/services/patient.service';
+import { Patient } from 'src/app/models/patient';
 
 @Component({
   selector: 'app-list-patients',

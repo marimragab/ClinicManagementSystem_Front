@@ -20,7 +20,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { JwtInterceptor } from './guard/jwt.interceptor';
-import { AuthService } from './_services/auth.service';
+import { AuthService } from './services/auth.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';

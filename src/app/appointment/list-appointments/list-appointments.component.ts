@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Appointment } from 'src/app/_models/appointment';
-import { AppointmentService } from 'src/app/_services/appointment.service';
+import { Appointment } from 'src/app/models/appointment';
+import { AppointmentService } from 'src/app/services/appointment.service';
 
 @Component({
   selector: 'app-list-appointments',
