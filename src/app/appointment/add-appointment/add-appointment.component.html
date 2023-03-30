@@ -1,81 +1,84 @@
-<form
-  id="addAppointmentForm"
-  [formGroup]="addAppointmentForm"
-  (ngSubmit)="addAppointment(addAppointmentForm.value)"
->
-  <div class="example-container">
-    <p class="fw-bold lead">Please Enter Your Name</p>
-    <mat-form-field appearance="fill" class="col-6">
-      <mat-label>Patient Name</mat-label>
-      <input
-        matInput
-        placeholder="Enter Patient Name..."
-        formControlName="patient"
-      />
-      <mat-error
-        *ngIf="
-          appointmentValues['patient'].invalid &&
-          (appointmentValues['patient'].dirty ||
-            appointmentValues['patient'].touched)
-        "
-        >Patient Name is required..</mat-error
-      >
-    </mat-form-field>
-  </div>
-
-  <div class="example-container">
-    <p class="fw-bold lead font-monospace">Please Select Clinic</p>
-    <mat-form-field appearance="fill">
-      <mat-label>Select Clinic..</mat-label>
-      <mat-select
-        (selectionChange)="onClinicSelected($event.value)"
-        formControlName="clinic"
-      >
-        <mat-option *ngFor="let clinic of clinics" [value]="clinic._id"
-          >{{ clinic.location.street | titlecase }} -
-          {{ clinic.location.city | titlecase }}</mat-option
+<div class="container mat-elevation-z8 col-8">
+  <form
+    id="addAppointmentForm"
+    [formGroup]="addAppointmentForm"
+    (ngSubmit)="addAppointment(addAppointmentForm.value)"
+    class="container p-3 m-auto"
+  >
+    <div class="example-container">
+      <p class="fw-bold lead fs-6">Please Enter Your Name</p>
+      <mat-form-field appearance="fill">
+        <mat-label>Patient Name</mat-label>
+        <input
+          matInput
+          placeholder="Enter Patient Name..."
+          formControlName="patient"
+        />
+        <mat-error
+          *ngIf="
+            appointmentValues['patient'].invalid &&
+            (appointmentValues['patient'].dirty ||
+              appointmentValues['patient'].touched)
+          "
+          >Patient Name is required..</mat-error
         >
-      </mat-select>
-      <mat-error
-        *ngIf="
-          appointmentValues['clinic'].invalid &&
-          (appointmentValues['clinic'].dirty ||
-            appointmentValues['clinic'].touched)
-        "
-        >Clinic is required..</mat-error
-      >
-    </mat-form-field>
-  </div>
+      </mat-form-field>
+    </div>
 
-  <div class="example-container">
-    <p class="fw-bold lead">Please Select Doctor</p>
-    <mat-form-field appearance="fill">
-      <mat-label>Select Doctor..</mat-label>
-      <mat-select
-        (selectionChange)="onDoctorSelected($event.value)"
-        formControlName="doctor"
-      >
-        <mat-option *ngFor="let doctor of doctors" [value]="doctor._id">
-          {{ doctor.firstName | titlecase }} {{ doctor.lastName | titlecase }} -
-          {{ doctor.specialty.specialty | titlecase }}
-        </mat-option>
-      </mat-select>
+    <div class="example-container">
+      <p class="fw-bold lead">Please Select Clinic</p>
+      <mat-form-field appearance="fill">
+        <mat-label>Select Clinic..</mat-label>
+        <mat-select
+          (selectionChange)="onClinicSelected($event.value)"
+          formControlName="clinic"
+        >
+          <mat-option *ngFor="let clinic of clinics" [value]="clinic._id"
+            >{{ clinic.location.street | titlecase }} -
+            {{ clinic.location.city | titlecase }}</mat-option
+          >
+        </mat-select>
+        <mat-error
+          *ngIf="
+            appointmentValues['clinic'].invalid &&
+            (appointmentValues['clinic'].dirty ||
+              appointmentValues['clinic'].touched)
+          "
+          >Clinic is required..</mat-error
+        >
+      </mat-form-field>
+    </div>
 
-      <mat-error
-        *ngIf="
-          appointmentValues['doctor'].invalid &&
-          (appointmentValues['doctor'].dirty ||
-            appointmentValues['doctor'].touched)
-        "
-        >Doctor is required..</mat-error
-      >
-    </mat-form-field>
-  </div>
+    <div class="example-container">
+      <p class="fw-bold lead">Please Select Doctor</p>
+      <mat-form-field appearance="fill">
+        <mat-label>Select Doctor..</mat-label>
+        <mat-select
+          (selectionChange)="onDoctorSelected($event.value)"
+          formControlName="doctor"
+        >
+          <mat-option *ngFor="let doctor of doctors" [value]="doctor._id">
+            {{ doctor.firstName | titlecase }}
+            {{ doctor.lastName | titlecase }} -
+            {{ doctor.specialty.specialty | titlecase }}
+          </mat-option>
+        </mat-select>
 
-  <div class="example-container">
-    <p class="fw-bold lead">Date</p>
+        <mat-error
+          *ngIf="
+            appointmentValues['doctor'].invalid &&
+            (appointmentValues['doctor'].dirty ||
+              appointmentValues['doctor'].touched)
+          "
+          >Doctor is required..</mat-error
+        >
+      </mat-form-field>
+    </div>
 
-    <!-- <mat-error
+    <div class="example-container">
+      <p class="fw-bold lead">Date</p>
+
+      <!-- <mat-error
         *ngIf="
           appointmentValues['date'].invalid &&
           (appointmentValues['date'].dirty || appointmentValues['date'].touched)
@@ -86,68 +89,69 @@
         >Appointment Date Must be on format DD/MM/YYYY</mat-error
       > -->
 
-    <!-- The date doesnot displayed on the input -->
-    <mat-form-field appearance="fill" class="example-form-field">
-      <mat-label>Choose Date....</mat-label>
-      <input
-        matInput
-        [matDatepicker]="datepicker"
-        formControlName="date"
-        [ngModel]="newdate"
-      />
-      <mat-hint>DD/MM/YYYY</mat-hint>
-      <mat-datepicker-toggle
-        matSuffix
-        [for]="datepicker"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #datepicker>
-        <mat-datepicker-actions>
-          <button mat-button matDatepickerCancel>Cancel</button>
-          <button
-            mat-raised-button
-            color="primary"
-            matDatepickerApply
-            (click)="dateChanges(datepicker)"
-          >
-            Apply
-          </button>
-        </mat-datepicker-actions>
-      </mat-datepicker>
-    </mat-form-field>
-  </div>
+      <!-- The date doesnot displayed on the input -->
+      <mat-form-field appearance="fill" class="example-form-field">
+        <mat-label>Choose Date....</mat-label>
+        <input
+          matInput
+          [matDatepicker]="datepicker"
+          formControlName="date"
+          [ngModel]="newdate"
+        />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="datepicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+          <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Cancel</button>
+            <button
+              mat-raised-button
+              color="primary"
+              matDatepickerApply
+              (click)="dateChanges(datepicker)"
+            >
+              Apply
+            </button>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+      </mat-form-field>
+    </div>
 
-  <p class="fw-bold lead pt-3">Appointment Time</p>
-  <div class="example-container-row">
-    <mat-form-field>
-      <input
-        matInput
-        name="selected_time_A"
-        formControlName="timeFrom"
-        [ngxMatTimepicker]="pickerA"
-        placeholder="From: 4:00 PM"
-        readonly
-      />
-      <mat-icon matSuffix (click)="pickerA.open()"> watch_later </mat-icon>
-    </mat-form-field>
-    <ngx-mat-timepicker #pickerA></ngx-mat-timepicker>
+    <p class="fw-bold lead pt-3">Appointment Time</p>
+    <div class="example-container-row">
+      <mat-form-field>
+        <input
+          matInput
+          name="selected_time_A"
+          formControlName="timeFrom"
+          [ngxMatTimepicker]="pickerA"
+          placeholder="From: 4:00 PM"
+          readonly
+        />
+        <mat-icon matSuffix (click)="pickerA.open()"> watch_later </mat-icon>
+      </mat-form-field>
+      <ngx-mat-timepicker #pickerA></ngx-mat-timepicker>
 
-    <mat-form-field>
-      <input
-        matInput
-        name="selected_time_B"
-        formControlName="timeTo"
-        [ngxMatTimepicker]="pickerB"
-        placeholder="To: 5:00 PM"
-        readonly
-      />
-      <mat-icon matSuffix (click)="pickerB.open()"> watch_later </mat-icon>
-    </mat-form-field>
-    <ngx-mat-timepicker #pickerB></ngx-mat-timepicker>
-  </div>
+      <mat-form-field>
+        <input
+          matInput
+          name="selected_time_B"
+          formControlName="timeTo"
+          [ngxMatTimepicker]="pickerB"
+          placeholder="To: 5:00 PM"
+          readonly
+        />
+        <mat-icon matSuffix (click)="pickerB.open()"> watch_later </mat-icon>
+      </mat-form-field>
+      <ngx-mat-timepicker #pickerB></ngx-mat-timepicker>
+    </div>
 
-  <div class="example-button-row">
-    <button mat-raised-button color="primary">Book Appointment</button>
-  </div>
-</form>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary">Book Appointment</button>
+    </div>
+  </form>
+</div>
 
 <!-- Add Error Messages, Message when the appointment added successfully, routing after adding the appointment -->
