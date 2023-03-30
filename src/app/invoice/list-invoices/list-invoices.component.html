@@ -1,1 +1,91 @@
-<p>list-invoices works!</p>
+<div class="content">
+  <div class="mat-elevation-z8">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="filter"
+        (keyup)="filterData($event)"
+      />
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!-- ID Column -->
+      <ng-container matColumnDef="_id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let invoice">{{ invoice._id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="clinic">
+        <th mat-header-cell *matHeaderCellDef>Clinic</th>
+        <td mat-cell *matCellDef="let invoice">
+          {{ invoice.clinicId.location.city }}
+          {{ invoice.clinicId.location.mobilephone }}
+        </td>
+      </ng-container>
+
+      <!-- Age Column -->
+      <ng-container matColumnDef="patient">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Patient</th>
+        <td mat-cell *matCellDef="let invoice">
+          {{ invoice?.patientId.firstName }}
+          {{ invoice?.patientId.lastName }}
+        </td>
+      </ng-container>
+
+      <!-- Address Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let invoice">
+          {{ invoice.date }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef>Time</th>
+        <td mat-cell *matCellDef="let invoice">{{ invoice.time }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="services">
+        <th mat-header-cell *matHeaderCellDef>Services Taken</th>
+        <td mat-cell *matCellDef="let invoice">
+          {{ invoice.services.length }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let invoice">
+          <!-- <button mat-raised-button>Preview</button> | -->
+          <a [routerLink]="['/invoice/details/', invoice._id]">
+            <button class="btn btn-sm btn-dark me-2">
+              <i class="fa fa-eye"></i>
+            </button>
+          </a>
+          |
+          <a [routerLink]="['/invoice/edit/', invoice._id]">
+            <button type="button" class="btn btn-sm btn-primary me-2">
+              <i class="fa fa-edit"></i>
+            </button>
+          </a>
+          |
+          <button
+            type="button"
+            class="btn btn-sm btn-danger"
+            (click)="deleteInvoice(invoice._id)"
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20, 30]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+</div>
