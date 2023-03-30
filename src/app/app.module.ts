@@ -14,7 +14,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { PatientModule } from './patient/patient.module';
 import { InvoiceModule } from './invoice/invoice.module';
-
+import {AdminModule} from './admin/admin.module'
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { MatInputModule } from '@angular/material/input';
@@ -25,6 +25,7 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 
+import {MatCardModule} from '@angular/material/card';
 // import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
@@ -51,6 +52,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatButtonModule,
     ReactiveFormsModule,
+    AdminModule,
+    MatCardModule,
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },

@@ -14,22 +14,13 @@ import { EmployeesAddComponent } from '../employees-add/employees-add.component'
 })
 export class EmployeesListComponent {
   displayedColumns: string[] = [
-    '_id',
-    'SSN',
+    
     'firstName',
     'lastName',
     'age',
-    'city',
-    'street',
-    'building',
     'phone',
     'job',
     'salary',
-    'image',
-    'cliniclocationcity',
-    'cliniclocationstreet',
-    'cliniclocationbuilding',
-    'availability',
     'details',
     'edit',
     'delete',
@@ -41,8 +32,8 @@ export class EmployeesListComponent {
   @ViewChild(MatSort) sort!: MatSort;
   ngOnInit() {
     this.employeeservice.getAllemplyees().subscribe((data: any) => {
-      this.emp = data.Data;
-      console.log(data[0]);
+      this.emp = data;
+      console.log(data.Data);
 
       this.dataSource = new MatTableDataSource(this.emp);
       this.dataSource.sort = this.sort;
