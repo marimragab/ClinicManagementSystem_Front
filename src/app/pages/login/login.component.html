@@ -1,16 +1,16 @@
 <div *ngIf="authService.loggedIn">
-  Welcome, {{ email }}!
+  Welcome, !
   <button (click)="logout()">Logout</button>
 </div>
-<div *ngIf="!authService.loggedIn">
-  <form (ngSubmit)="login()">
+<div *ngIf="!authService.loggedIn" class="container mat-elevation-z8">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
     <div class="example-container">
-      <mat-form-field class="example-full-width">
+      <mat-form-field>
         <mat-label>Email</mat-label>
         <input
           type="email"
           matInput
-          [(ngModel)]="email"
+          formControlName="email"
           name="email"
           [errorStateMatcher]="matcher"
           placeholder="Ex. pat@example.com"
@@ -34,7 +34,7 @@
         <input
           matInput
           [type]="hide ? 'password' : 'text'"
-          [(ngModel)]="password"
+          formControlName="password"
           name="password"
         />
         <button

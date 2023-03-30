@@ -8,11 +8,11 @@ export class JwtService {
   constructor(public jwtHelper: JwtHelperService) {}
 
   public isAuthenticated(): boolean {
-    const token = localStorage.getItem('access_token');
+    const token = localStorage.getItem('current_user');
     return !this.jwtHelper.isTokenExpired(token);
   }
 
   public getToken(): string {
-    return localStorage.getItem('access_token');
+    return localStorage.getItem('current_user');
   }
 }

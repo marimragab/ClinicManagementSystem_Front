@@ -36,20 +36,39 @@ export class LoginComponent {
   // }
 
   hide = true;
-  email: string;
-  password: string;
-  // loginForm = new FormGroup({
-  //   email: new FormControl('', [Validators.required, Validators.email]),
-  //   password: new FormControl('', [Validators.required]),
-  // });
+  // email: string;
+  // password: string;
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+  });
   matcher = new MyErrorStateMatcher();
 
   login() {
     this.authService
-      .login(this.email, this.password)
-      .subscribe((response: { token: string }) => {
-        console.log(response);
-        localStorage.setItem('jwt_token', response.token);
+      .login(
+        this.loginForm.get('email')?.value,
+        this.loginForm.get('password')?.value
+      )
+      .subscribe({
+        next: (response) => {
+          console.log(response);
+          // If the user is authenticated, redirect them to their page based on their role
+          if (response.data.role === 'admin') {
+            // Redirect to admin page
+            console.log('Admin Logged');
+          } else if (response.data.role === 'patient') {
+            // Redirect to patient page
+            console.log('Patient Logged');
+          } else if (response.data.role === 'doctor') {
+            console.log('Doctor Logged');
+          } else {
+            console.log('Employee Logged');
+          }
+        },
+        error: (error) => {
+          console.log(error);
+        },
       });
   }
 

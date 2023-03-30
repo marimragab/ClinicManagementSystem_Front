@@ -8,7 +8,7 @@ import {
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler) {
-    const token = localStorage.getItem('jwt_token');
+    const token = localStorage.getItem('current_user');
     if (token) {
       request = request.clone({
         setHeaders: {
