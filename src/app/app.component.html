@@ -7,10 +7,10 @@
   <!-- <app-header></app-header> -->
   <!-- <app-left-panel></app-left-panel> -->
 
-  <app-header></app-header>
-  <app-panel></app-panel>
+  <!-- <app-header></app-header>
+  <app-panel></app-panel> -->
   <!-- <app-left-panel></app-left-panel> -->
-  <div class="page-section">
+  <!-- <div class="page-section">
     <div class="container">
       <h1 id="appointment" class="text-center wow fadeInUp">
         Make an Appointment
@@ -20,10 +20,10 @@
         <app-add-appointment></app-add-appointment>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- .page-section -->
-  <router-outlet></router-outlet>
-  <app-footer></app-footer>
+  <!-- <router-outlet></router-outlet>
+  <app-footer></app-footer> -->
 
   <!-- <a [routerLink]="['/clinics']">clinic</a>
 <hr>
@@ -34,3 +34,25 @@
 <!-- <app-add-patient></app-add-patient> -->
 <!-- </div> -->
 <!-- <app-list-patients></app-list-patients> -->
+
+<!-- <app-add-appointment></app-add-appointment> -->
+
+<div>
+  <!-- <app-list-invoices></app-list-invoices> -->
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <app-login></app-login>
+
+  <app-patient-profile
+    *ngIf="authService.isLoggedIn | async"
+  ></app-patient-profile>
+</div>
+
+<app-employees-list></app-employees-list>
+<!-- <app-patient-profile></app-patient-profile> -->

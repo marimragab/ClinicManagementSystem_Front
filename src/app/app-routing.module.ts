@@ -32,6 +32,14 @@ const routes: Routes = [
     loadChildren: () =>
       import('./patient/patient.module').then((m) => m.PatientModule),
   },
+
+  {
+    path: 'appointment',
+    loadChildren: () =>
+      import('./appointment/appointment.module').then(
+        (m) => m.AppointmentModule
+      ),
+  },
   //{path:"clinics/editbymanager/:id",component:ClinicUpdateByManagerComponent},
   // {path:"employees",loadChildren:()=>import("./employees/employees.module").then(m=>m.EmployeesModule)},
 

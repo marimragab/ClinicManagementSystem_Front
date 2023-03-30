@@ -24,11 +24,12 @@ import { AuthService } from './services/auth.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { PatientProfileComponent } from './pages/patient-profile/patient-profile.component';
 
 // import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, PatientProfileComponent],
   imports: [
     EmployeesModule,
     ClinicsModule,
@@ -50,12 +51,12 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatFormFieldModule,
     MatButtonModule,
-    ReactiveFormsModule,
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService,
   ],
   bootstrap: [AppComponent],
+  exports: [MatFormFieldModule],
 })
 export class AppModule {}
