@@ -1,0 +1,28 @@
+<mat-nav-list>
+    <div class="logo py-4">
+       <img src="../../../assets/img/clinicLogo.png">
+    </div>
+    <mat-divider></mat-divider>
+    <h2 matSubheader class="mt-2">APPLICATION</h2>
+    <a mat-list-item routerLink="/adminhome" routerLinkActive="list-item-active">
+        <mat-icon>home</mat-icon>Home
+    </a>
+    <a mat-list-item routerLink="/admindashboard" routerLinkActive="list-item-active">
+        <mat-icon>dashboard</mat-icon> Dashboard
+    </a>
+    
+    <a mat-list-item>
+        <mat-icon>edit</mat-icon> Patient
+    </a>
+    <a mat-list-item>
+        <mat-icon>edit</mat-icon> Doctors
+    </a>
+    <a mat-list-item [routerLink]="['/employees']">
+        <mat-icon>edit</mat-icon> Employee
+    </a>
+    <a mat-list-item>
+        <mat-icon>edit</mat-icon> Clinic
+    </a>
+    
+    <!-- <a [routerLink]="['/clinics']"></a> -->
+</mat-nav-list>

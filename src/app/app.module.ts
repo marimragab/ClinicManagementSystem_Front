@@ -14,7 +14,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { PatientModule } from './patient/patient.module';
 import { InvoiceModule } from './invoice/invoice.module';
-
+import { AdminModule } from './admin/admin.module';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { MatInputModule } from '@angular/material/input';
@@ -26,10 +26,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { PatientProfileComponent } from './pages/patient-profile/patient-profile.component';
 
+import { MatCardModule } from '@angular/material/card';
 // import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, PatientProfileComponent],
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
+  ],
+  bootstrap: [AppComponent],
+  exports: [MatFormFieldModule],
   imports: [
     EmployeesModule,
     ClinicsModule,
@@ -44,6 +51,7 @@ import { PatientProfileComponent } from './pages/patient-profile/patient-profile
     AppointmentModule,
     PatientModule,
     InvoiceModule,
+    AdminModule,
     RouterModule,
     CoreModule,
     MatTableModule,
@@ -52,11 +60,5 @@ import { PatientProfileComponent } from './pages/patient-profile/patient-profile
     MatFormFieldModule,
     MatButtonModule,
   ],
-  providers: [
-    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
-    JwtHelperService,
-  ],
-  bootstrap: [AppComponent],
-  exports: [MatFormFieldModule],
 })
 export class AppModule {}

@@ -18,6 +18,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog'
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatCardModule} from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
   declarations: [
     EmployeesListComponent,
@@ -42,7 +45,10 @@ import {MatRadioModule} from '@angular/material/radio';
      MatDialogModule,
      MatSelectModule,
      MatRadioModule,
-     ReactiveFormsModule
+     ReactiveFormsModule,
+     MatCardModule,
+     MatProgressBarModule,
+     MatDividerModule,
   ],
   exports :[ EmployeesListComponent,
     EmployeesAddComponent,

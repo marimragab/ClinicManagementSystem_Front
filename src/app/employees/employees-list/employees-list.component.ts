@@ -14,22 +14,13 @@ import { EmployeesAddComponent } from '../employees-add/employees-add.component'
 })
 export class EmployeesListComponent {
   displayedColumns: string[] = [
-    '_id',
-    'SSN',
+    
     'firstName',
     'lastName',
     'age',
-    'city',
-    'street',
-    'building',
     'phone',
     'job',
     'salary',
-    'image',
-    'cliniclocationcity',
-    'cliniclocationstreet',
-    'cliniclocationbuilding',
-    'availability',
     'details',
     'edit',
     'delete',
