@@ -34,7 +34,7 @@ export class ClinicsListComponent implements OnInit {
 
   ngOnInit() {
     this.clinicsservices.getAllClinc().subscribe((data: any) => {
-      this.clinic = data.Data;
+      this.clinic = data;
       // console.log( data);
       this.dataSource = new MatTableDataSource(this.clinic);
       this.dataSource.sort = this.sort;

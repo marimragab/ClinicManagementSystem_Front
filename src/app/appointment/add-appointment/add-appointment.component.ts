@@ -7,7 +7,7 @@ import {
 } from '@angular/material/core';
 
 import { AppointmentService } from 'src/app/services/appointment.service';
-import { ClinicService } from 'src/app/services/clinic.service';
+import { ClinicServicesService } from 'src/app/services/clinic-services.service';
 import { DoctorService } from 'src/app/services/doctor.service';
 
 const MY_DATE_FORMATS = {
@@ -34,7 +34,7 @@ const MY_DATE_FORMATS = {
 export class AddAppointmentComponent implements OnInit {
   constructor(
     private appointmentService: AppointmentService,
-    private clinicService: ClinicService,
+    private clinicService: ClinicServicesService,
     private dateAdapter: DateAdapter<Date>
   ) {}
 
@@ -90,7 +90,7 @@ export class AddAppointmentComponent implements OnInit {
 
   ngOnInit() {
     this.dateAdapter.setLocale('en-GB');
-    this.clinicService.getAllClinics().subscribe((data: any) => {
+    this.clinicService.getAllClinc().subscribe((data: any) => {
       console.log('Clinics', data.Data);
       this.clinics = data.Data;
     });
