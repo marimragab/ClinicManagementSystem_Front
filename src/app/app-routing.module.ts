@@ -16,9 +16,22 @@ import { AddAppointmentComponent } from './appointment/add-appointment/add-appoi
 import { AppointmentDetailsComponent } from './appointment/appointment-details/appointment-details.component';
 import { UpdateAppointmentComponent } from './appointment/update-appointment/update-appointment.component';
 import { ListAppointmentsComponent } from './appointment/list-appointments/list-appointments.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { LoginComponent } from './pages/login/login.component';
+import { PatientProfileComponent } from './pages/patient-profile/patient-profile.component';
+import { AdminViewComponent } from './admin/admin-view/admin-view.component';
 //import { ClinicUpdateByManagerComponent } from './clinics/clinic-update-by-manager/clinic-update-by-manager.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    component: HomepageComponent,
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'admin/dashboard', component: AdminViewComponent },
+  { path: 'patient/profile', component: PatientProfileComponent },
+
   { path: 'clinics', component: ClinicsListComponent },
   { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
   { path: 'clinics/add', component: ClinicsAddComponent },
