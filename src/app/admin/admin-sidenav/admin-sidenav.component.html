@@ -1,48 +1,52 @@
 <mat-nav-list>
-    <div class="logo py-4">
-       <img src="../../../assets/img/clinicLogo.png">
-    </div>
-    <mat-divider></mat-divider>
-    <h2 matSubheader class="mt-2">APPLICATION</h2>
-    <!-- <a mat-list-item routerLink="/adminhome" routerLinkActive="list-item-active">
+  <div class="logo py-4">
+    <img src="../../../assets/img/clinicLogo.png" />
+  </div>
+  <mat-divider></mat-divider>
+  <h2 matSubheader class="mt-2">APPLICATION</h2>
+  <!-- <a mat-list-item routerLink="/adminhome" routerLinkActive="list-item-active">
         <mat-icon>home</mat-icon>Home
     </a> -->
-    <a mat-list-item routerLink="" routerLinkActive="list-item-active">
-        <mat-icon>home</mat-icon>Home
-    </a> 
-    <a mat-list-item routerLink="/admindashboard" routerLinkActive="list-item-active">
-        <mat-icon>dashboard</mat-icon> Dashboard
-    </a>
-    
-    <a mat-list-item [routerLink]="['/patient']">
-        <mat-icon>edit</mat-icon> Patients
-    </a>
-    <a mat-list-item [routerLink]="['/doctor']">
-        <mat-icon>edit</mat-icon> Doctors
-    </a>
-    <a mat-list-item [routerLink]="['/employees']">
-        <mat-icon>edit</mat-icon> Employees
-    </a>
-    <a mat-list-item [routerLink]="['/clinics']">
-        <mat-icon>edit</mat-icon> Clinics
-    </a>
-    <a mat-list-item [routerLink]="['/appointment/list']">
-        <mat-icon>edit</mat-icon> Appointments
-    </a>
-    <a mat-list-item [routerLink]="['/invoic']">
-        <mat-icon>edit</mat-icon> Invoics
-    </a>
-    <a mat-list-item [routerLink]="['/medicine']">
-        <mat-icon>edit</mat-icon> Medecines
-    </a>
-    <a mat-list-item [routerLink]="['/prescription']">
-        <mat-icon>edit</mat-icon> Prescriptions
-    </a>
-    <a mat-list-item [routerLink]="['/report']">
-        <mat-icon>edit</mat-icon> Reports
-    </a>
-    <a mat-list-item [routerLink]="['/specialist']">
-        <mat-icon>edit</mat-icon> Specialists
-    </a>
-    <!-- <a [routerLink]="['/clinics']"></a> -->
+  <a mat-list-item routerLink="" routerLinkActive="list-item-active">
+    <mat-icon>home</mat-icon>Home
+  </a>
+  <a
+    mat-list-item
+    routerLink="/admindashboard"
+    routerLinkActive="list-item-active"
+  >
+    <mat-icon>dashboard</mat-icon> Dashboard
+  </a>
+
+  <a mat-list-item [routerLink]="['/patient']">
+    <mat-icon>edit</mat-icon> Patients
+  </a>
+  <a mat-list-item [routerLink]="['/doctor']">
+    <mat-icon>edit</mat-icon> Doctors
+  </a>
+  <a mat-list-item [routerLink]="['/employees']">
+    <mat-icon>edit</mat-icon> Employees
+  </a>
+  <a mat-list-item [routerLink]="['/clinics']">
+    <mat-icon>edit</mat-icon> Clinics
+  </a>
+  <a mat-list-item [routerLink]="['/appointment/list']">
+    <mat-icon>edit</mat-icon> Appointments
+  </a>
+  <a mat-list-item [routerLink]="['/invoic']">
+    <mat-icon>edit</mat-icon> Invoics
+  </a>
+  <a mat-list-item [routerLink]="['/medicine']">
+    <mat-icon>edit</mat-icon> Medecines
+  </a>
+  <a mat-list-item [routerLink]="['/prescription']">
+    <mat-icon>edit</mat-icon> Prescriptions
+  </a>
+  <a mat-list-item [routerLink]="['/report']">
+    <mat-icon>edit</mat-icon> Reports
+  </a>
+  <a mat-list-item [routerLink]="['/specialist']">
+    <mat-icon>edit</mat-icon> Specialists
+  </a>
+  <!-- <a [routerLink]="['/clinics']"></a> -->
 </mat-nav-list>

@@ -18,7 +18,7 @@ import { UpdateAppointmentComponent } from './appointment/update-appointment/upd
 import { ListAppointmentsComponent } from './appointment/list-appointments/list-appointments.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginComponent } from './pages/login/login.component';
-import { PatientProfileComponent } from './pages/patient-profile/patient-profile.component';
+import { PatientProfileComponent } from './patient-dashboard/patient-profile/patient-profile.component';
 import { AdminViewComponent } from './admin/admin-view/admin-view.component';
 //import { ClinicUpdateByManagerComponent } from './clinics/clinic-update-by-manager/clinic-update-by-manager.component';
 
