@@ -159,7 +159,7 @@ export class LoginComponent implements OnInit {
         this.authService.setLoggedIn(true);
         this.doesLoginHasError = false;
 
-        if (role == 'patient') this.router.navigateByUrl('/patient');
+        if (role == 'patient') this.router.navigateByUrl('/patient/profile');
         else if (role == 'doctor') this.router.navigateByUrl('/');
       });
   }
