@@ -19,30 +19,30 @@ import { ListAppointmentsComponent } from './appointment/list-appointments/list-
 //import { ClinicUpdateByManagerComponent } from './clinics/clinic-update-by-manager/clinic-update-by-manager.component';
 
 const routes: Routes = [
-  { path: 'clinics', component: ClinicsListComponent },
-  { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
-  { path: 'clinics/add', component: ClinicsAddComponent },
-  { path: 'clinics/editbyadmin/:id', component: ClinicEditByAdminComponent },
-  {
-    path: 'clinics/editbymanager/:id',
-    component: ClinicEditByManagerComponent,
-  },
-  {
-    path: 'patient',
-    loadChildren: () =>
-      import('./patient/patient.module').then((m) => m.PatientModule),
-  },
+  // { path: 'clinics', component: ClinicsListComponent },
+  // { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
+  // { path: 'clinics/add', component: ClinicsAddComponent },
+  // { path: 'clinics/editbyadmin/:id', component: ClinicEditByAdminComponent },
+  // {
+  //   path: 'clinics/editbymanager/:id',
+  //   component: ClinicEditByManagerComponent,
+  // },
+  // {
+  //   path: 'patient',
+  //   loadChildren: () =>
+  //     import('./patient/patient.module').then((m) => m.PatientModule),
+  // },
   //{path:"clinics/editbymanager/:id",component:ClinicUpdateByManagerComponent},
   // {path:"employees",loadChildren:()=>import("./employees/employees.module").then(m=>m.EmployeesModule)},
 
-  { path: 'employees', component: EmployeesListComponent },
-  { path: 'employees/details/:id', component: EmployeesDetailsComponent },
-  { path: 'employees/add', component: EmployeesAddComponent },
-  { path: 'employees/edit/:id', component: EmployeesUpdateComponent },
-  {
-    path: 'employees/editbymanager/:id',
-    component: EmployessUpdateByManagerComponent,
-  },
+  // { path: 'employees', component: EmployeesListComponent },
+  // { path: 'employees/details/:id', component: EmployeesDetailsComponent },
+  // { path: 'employees/add', component: EmployeesAddComponent },
+  // { path: 'employees/edit/:id', component: EmployeesUpdateComponent },
+  // {
+  //   path: 'employees/editbymanager/:id',
+  //   component: EmployessUpdateByManagerComponent,
+  // },
 
   { path: 'appointment', component: AddAppointmentComponent },
   { path: 'appointment/details/:id', component: AppointmentDetailsComponent },
