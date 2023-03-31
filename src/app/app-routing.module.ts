@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClinicsListComponent } from './clinics/clinics-list/clinics-list.component';
 import { ClinicsDetailsComponent } from './clinics/clinics-details/clinics-details.component';
 import { ClinicsAddComponent } from './clinics/clinics-add/clinics-add.component';
-import { ClinicEditByManagerComponent } from './clinics/clinic-edit-by-manager/clinic-edit-by-manager.component';
 import { ClinicEditByAdminComponent } from './clinics/clinic-edit-by-admin/clinic-edit-by-admin.component';
 import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
 import { EmployeesDetailsComponent } from './employees/employees-details/employees-details.component';
@@ -36,10 +35,7 @@ const routes: Routes = [
   { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
   { path: 'clinics/add', component: ClinicsAddComponent },
   { path: 'clinics/editbyadmin/:id', component: ClinicEditByAdminComponent },
-  {
-    path: 'clinics/editbymanager/:id',
-    component: ClinicEditByManagerComponent,
-  },
+ 
   {
     path: 'patient',
     loadChildren: () =>

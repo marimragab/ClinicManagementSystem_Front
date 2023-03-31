@@ -1,1 +1,30 @@
-<p>prescription-details works!</p>
+<mat-card class="example-card"  >
+    <mat-card-header>
+      <mat-card-subtitle><b>specialty Details</b></mat-card-subtitle>
+     
+    </mat-card-header>
+    <mat-card-content>
+        <!-- public _id:number, 
+        public medicine:Medicine, public notes:string,public date: string, public time: string
+        ,public clinic?:number, public doctor?:number, public patient?: number){} 
+    
+      medicineId:number,  quantity:string,  medicineDosage:string-->
+
+      <pre>ID: {{pres._id}}              Medicine ID: {{pres.medicine.medicineId}}</pre> 
+     
+      <pre>Quantity: {{pres.medicine.quantity}}        Medicine Dosage: {{pres.medicine.medicineDosage}} </pre> 
+      <pre>Notes: {{pres.notes}}              Date: {{pres.date}}</pre> 
+      <pre>Time: {{pres.time}}              Clinic ID: {{pres.clinic}}</pre> 
+      <pre>Doctor ID: {{pres.doctor}}              Patient ID: {{pres.patient}}</pre> 
+      
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <!-- <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions> -->
+  
+  </mat-card>
+  <button mat-fab extended [routerLink]="['/prescription']" color="primary">
+    Back
+  </button>

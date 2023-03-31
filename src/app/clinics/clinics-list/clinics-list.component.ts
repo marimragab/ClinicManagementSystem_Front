@@ -65,4 +65,5 @@ export class ClinicsListComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+  
 }

@@ -25,7 +25,7 @@ export class ListAppointmentsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private appointmentService: AppointmentService) {}
+  constructor(public appointmentService: AppointmentService) {}
   ngOnInit(): void {
     this.getAllAppointments();
   }

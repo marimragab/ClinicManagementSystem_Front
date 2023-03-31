@@ -6,7 +6,6 @@ import { ClinicsRoutingModule } from './clinics-routing.module';
 import { ClinicsListComponent } from './clinics-list/clinics-list.component';
 import { ClinicsAddComponent } from './clinics-add/clinics-add.component';
 import { ClinicsDetailsComponent } from './clinics-details/clinics-details.component';
-import { ClinicEditByManagerComponent } from './clinic-edit-by-manager/clinic-edit-by-manager.component';
 import { ClinicEditByAdminComponent } from './clinic-edit-by-admin/clinic-edit-by-admin.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -25,8 +24,6 @@ import { MatRadioModule } from '@angular/material/radio';
     ClinicsListComponent,
     ClinicsAddComponent,
     ClinicsDetailsComponent,
-    ClinicEditByManagerComponent,
-    ClinicEditByManagerComponent,
     ClinicEditByAdminComponent,
   ],
   imports: [
@@ -51,8 +48,6 @@ import { MatRadioModule } from '@angular/material/radio';
     ClinicsListComponent,
     ClinicsAddComponent,
     ClinicsDetailsComponent,
-    ClinicEditByManagerComponent,
-    ClinicEditByManagerComponent,
     ClinicEditByAdminComponent,
     ReactiveFormsModule,
   ],

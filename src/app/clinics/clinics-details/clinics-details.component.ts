@@ -1,7 +1,8 @@
-import { Component,ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component,ViewChild,OnInit } from '@angular/core';
+
 import { address, Clinics } from 'src/app/models/clinics';
 import { ClinicServicesService } from 'src/app/services/clinic-services.service';
+import { ActivatedRoute } from '@angular/router';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
@@ -10,7 +11,7 @@ import {MatTableDataSource} from '@angular/material/table';
   templateUrl: './clinics-details.component.html',
   styleUrls: ['./clinics-details.component.css']
 })
-export class ClinicsDetailsComponent {
+export class ClinicsDetailsComponent implements OnInit {
   displayedColumns: string[] = ['_id', 'city', 'street', 'building',
   'mobilePhone', 'doctors', 'manager', 'availability'];
 clinic:Clinics=new Clinics(0,{city:"",street:"",building:0},"",[],0,true);
