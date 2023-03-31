@@ -92,12 +92,7 @@
       <!-- The date doesnot displayed on the input -->
       <mat-form-field appearance="fill" class="example-form-field">
         <mat-label>Choose Date....</mat-label>
-        <input
-          matInput
-          [matDatepicker]="datepicker"
-          formControlName="date"
-          [ngModel]="newdate"
-        />
+        <input matInput [matDatepicker]="datepicker" formControlName="date" />
         <mat-hint>DD/MM/YYYY</mat-hint>
         <mat-datepicker-toggle
           matSuffix

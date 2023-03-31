@@ -27,10 +27,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { PatientProfileComponent } from './pages/patient-profile/patient-profile.component';
 
 import { MatCardModule } from '@angular/material/card';
+import { HomepageComponent } from './pages/homepage/homepage.component';
 // import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PatientProfileComponent],
+  declarations: [AppComponent, LoginComponent, PatientProfileComponent, HomepageComponent],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService,
