@@ -24,19 +24,14 @@ import { AuthService } from './services/auth.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { PatientProfileComponent } from './patient-dashboard/patient-profile/patient-profile.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { PatientDashboardModule } from './patient-dashboard/patient-dashboard.module';
 // import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    PatientProfileComponent,
-    HomepageComponent,
-  ],
+  declarations: [AppComponent, LoginComponent, HomepageComponent],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService,
