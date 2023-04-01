@@ -10,6 +10,14 @@ import { PatientNavbarComponent } from './patient-navbar/patient-navbar.componen
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -24,6 +32,15 @@ import { PatientProfileComponent } from './patient-profile/patient-profile.compo
     CoreModule,
     MatIconModule,
     MatListModule,
+    MatSidenavModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule,
+    FormsModule,
+    MatInputModule,
   ],
+  exports: [PatientPageComponent],
 })
 export class PatientDashboardModule {}
