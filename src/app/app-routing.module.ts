@@ -26,11 +26,12 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: HomepageComponent,
+    redirectTo: 'home',
   },
+  { path: 'home', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin/dashboard', component: AdminViewComponent },
-  { path: 'patient/profile', component: PatientProfileComponent },
+  // { path: 'patient/profile', component: PatientProfileComponent },
 
   { path: 'clinics', component: ClinicsListComponent },
   { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
@@ -40,11 +41,11 @@ const routes: Routes = [
     path: 'clinics/editbymanager/:id',
     component: ClinicEditByManagerComponent,
   },
-  {
-    path: 'patient',
-    loadChildren: () =>
-      import('./patient/patient.module').then((m) => m.PatientModule),
-  },
+  // {
+  //   path: 'patient',
+  //   loadChildren: () =>
+  //     import('./patient/patient.module').then((m) => m.PatientModule),
+  // },
 
   {
     path: 'appointment',
@@ -53,6 +54,14 @@ const routes: Routes = [
         (m) => m.AppointmentModule
       ),
   },
+
+  // {
+  //   path: 'patient',
+  //   loadChildren: () =>
+  //     import('./patient-dashboard/patient-dashboard.module').then(
+  //       (m) => m.PatientDashboardModule
+  //     ),
+  // },
   // { path: 'clinics', component: ClinicsListComponent },
   // { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
   // { path: 'clinics/add', component: ClinicsAddComponent },

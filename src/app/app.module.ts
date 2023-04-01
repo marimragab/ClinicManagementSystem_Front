@@ -60,6 +60,7 @@ import { PatientDashboardModule } from './patient-dashboard/patient-dashboard.mo
     MatIconModule,
     MatFormFieldModule,
     MatButtonModule,
+    PatientDashboardModule,
   ],
 })
 export class AppModule {}
