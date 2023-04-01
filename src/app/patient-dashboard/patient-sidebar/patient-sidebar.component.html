@@ -1,1 +1,45 @@
-<p>patient-sidebar works!</p>
+<mat-nav-list>
+  <div class="logo py-4">
+    <img src="../../../assets/img/clinicLogo.png" height="50" />
+  </div>
+  <mat-divider></mat-divider>
+  <h2 matSubheader class="mt-2">Your Profile</h2>
+
+  <a mat-list-item routerLink="" routerLinkActive="list-item-active">
+    <mat-icon>home</mat-icon>Home
+  </a>
+  <a mat-list-item routerLink="profile" routerLinkActive="list-item-active">
+    <mat-icon>person</mat-icon> Profile
+  </a>
+
+  <!-- <a mat-list-item [routerLink]="['/appointment']">
+    <mat-icon>date_range</mat-icon> Appointments
+  </a> -->
+
+  <mat-accordion>
+    <mat-expansion-panel class="my-panel">
+      <mat-expansion-panel-header>
+        <mat-icon>date_range</mat-icon> Appointments
+      </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item>
+          <a routerLink="appointment/book">
+            <mat-icon>add</mat-icon> Book Appointment
+          </a>
+        </mat-list-item>
+        <mat-list-item>
+          <a routerLink="/appointment/me/view">
+            <mat-icon>view</mat-icon> View Your Appointments
+          </a>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <a mat-list-item> <mat-icon>receipt</mat-icon> Invoices </a>
+  <a mat-list-item> <mat-icon>settings</mat-icon> Settings </a>
+  <!-- <a mat-list-item (click)="logout()">
+    <mat-icon>logout</mat-icon> Logout
+  </a> -->
+  <app-logout></app-logout>
+</mat-nav-list>
