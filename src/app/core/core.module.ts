@@ -5,6 +5,8 @@ import { FooterComponent } from './footer/footer.component';
 import { PanelComponent } from './panel/panel.component';
 import { RouterModule } from '@angular/router';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { LogoutComponent } from './logout/logout.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -13,8 +15,15 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 
     PanelComponent,
     SideBarComponent,
+    LogoutComponent,
   ],
-  imports: [CommonModule, RouterModule],
-  exports: [HeaderComponent, FooterComponent, PanelComponent, SideBarComponent],
+  imports: [CommonModule, RouterModule, MatIconModule],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    PanelComponent,
+    SideBarComponent,
+    LogoutComponent,
+  ],
 })
 export class CoreModule {}
