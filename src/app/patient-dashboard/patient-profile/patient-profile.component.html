@@ -1,3 +1,50 @@
-<p>patient-profile works!</p>
+<div class="col-8 m-auto pt-5">
+  <mat-card>
+    <mat-card-header class="m-auto">
+      <mat-card-title
+        >{{ userInfo.Data[0].firstName }}
+        {{ userInfo.Data[0].lastName }}</mat-card-title
+      >
+      <mat-card-subtitle class="fs-4 text-center">
+        {{ userInfo.Data[0].address.city }}</mat-card-subtitle
+      >
+    </mat-card-header>
+    <div class="font-monospace">
+      <ul class="list-group list-group-flush text-start">
+        <li class="list-group-item border-0">
+          <span class="fw-bold">Age:&nbsp;</span>{{ userInfo.Data[0].age }}
+        </li>
+      </ul>
 
-<app-side-bar [role]="role"></app-side-bar>
+      <ul class="list-group list-group-flush text-start">
+        <li class="list-group-item border-0">
+          <span class="fw-bold">Address:&nbsp;</span>
+          {{ userInfo.Data[0].address.building }}
+          {{ userInfo.Data[0].address.street }}
+          <span class="fw-bold text-black-50">street</span>
+          {{ userInfo.Data[0].address.city }}
+        </li>
+      </ul>
+
+      <ul class="list-group list-group-flush text-start">
+        <li class="list-group-item border-0">
+          <span class="fw-bold">Phone:&nbsp;</span>{{ userInfo.Data[0].phone }}
+        </li>
+      </ul>
+    </div>
+    <mat-card-actions align="end">
+      <a>
+        <button mat-button color="primary">Update</button>
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="m-auto text-center pt-5">
+  <a routerLink="/appointment/book">
+    <button mat-fab extended color="primary">
+      <mat-icon>add</mat-icon>
+      Book Appointment
+    </button>
+  </a>
+</div>
