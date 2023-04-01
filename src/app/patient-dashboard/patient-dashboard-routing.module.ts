@@ -6,7 +6,7 @@ import { PatientProfileComponent } from './patient-profile/patient-profile.compo
 
 const routes: Routes = [
   {
-    path: 'patient',
+    path: '',
     component: PatientPageComponent,
     children: [
       { path: '', redirectTo: 'patient', pathMatch: 'full' },

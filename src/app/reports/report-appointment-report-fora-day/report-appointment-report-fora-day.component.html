@@ -1,2 +1,68 @@
-<input type="date" [(ngModel)]="selectedDate">
-<button (click)="onGetAppointmentByDate()">Get Appointment</button>
+<div class="card m-auto mt-2 p-3 col-6" height="150">
+  <input type="date" [(ngModel)]="selectedDate" class="form-control mb-3" />
+  <button (click)="onGetAppointmentByDate()" class="btn btn-success">
+    Get Appointment
+  </button>
+</div>
+
+<div class="content text-center m-3" *ngIf="appointmentsAtDay.length > 0">
+  <div class="mat-elevation-z8">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="filter"
+        (keyup)="filterData($event)"
+      />
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="clinic">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Clinic</th>
+        <td mat-cell *matCellDef="let appointment">
+          {{ appointment.clinic.location.city }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="patient">
+        <th mat-header-cell *matHeaderCellDef>Patient</th>
+        <td mat-cell *matCellDef="let appointment">
+          {{ appointment.patient?.firstName }}
+          {{ appointment.patient?.lastName }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="doctor">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Doctor</th>
+        <td mat-cell *matCellDef="let appointment">
+          {{ appointment.doctorName.firstName }}
+          {{ appointment.doctorName.lastName }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="from">
+        <th mat-header-cell *matHeaderCellDef>From</th>
+        <td mat-cell *matCellDef="let appointment">
+          {{ appointment.timeFrom }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="to">
+        <th mat-header-cell *matHeaderCellDef>To</th>
+        <td mat-cell *matCellDef="let appointment">
+          {{ appointment.timeTo }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20, 30]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+</div>
+
+<div class="text-danger text-center pt-5">{{ noappointments }}</div>
