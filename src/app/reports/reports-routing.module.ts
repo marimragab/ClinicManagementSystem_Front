@@ -15,17 +15,29 @@ const routes: Routes = [
   { path: 'list', component: ReportsListComponent },
   { path: 'allappointment', component: AllAppointmentComponent },
   { path: 'dailyappointment', component: ReportDailyAppointmentComponent },
-  { path: 'allappointmentforaday', component: ReportAppointmentReportForaDayComponent },
+  {
+    path: 'allappointmentforaday',
+    component: ReportAppointmentReportForaDayComponent,
+  },
   { path: 'dailyclinic', component: ReportClinicDailyAppointmentComponent },
-  { path: 'clinicforaday', component: ReportClinicAppointmentReportForaDayComponent },
+  {
+    path: 'clinicforaday',
+    component: ReportClinicAppointmentReportForaDayComponent,
+  },
   { path: 'dailydoctor', component: ReportDoctorDailyAppointmentComponent },
-  { path: 'doctorforaday', component: ReportDoctorAppointmentReportForaDayComponent },
+  {
+    path: 'doctorforaday',
+    component: ReportDoctorAppointmentReportForaDayComponent,
+  },
   { path: 'dailypatient', component: ReportPatientDailyAppointmentComponent },
-  { path: 'patientforaday', component: ReportPatientAppointmentReportForaDayComponent }
+  {
+    path: 'patientforaday',
+    component: ReportPatientAppointmentReportForaDayComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ReportsRoutingModule { }
+export class ReportsRoutingModule {}

@@ -45,12 +45,12 @@ const routes: Routes = [
   //   loadChildren: () =>
   //     import('./patient/patient.module').then((m) => m.PatientModule),
   // },
- 
-  {
-    path: 'patient',
-    loadChildren: () =>
-      import('./patient/patient.module').then((m) => m.PatientModule),
-  },
+
+  // {
+  //   path: 'patient',
+  //   loadChildren: () =>
+  //     import('./patient/patient.module').then((m) => m.PatientModule),
+  // },
 
   {
     path: 'appointment',
@@ -60,13 +60,13 @@ const routes: Routes = [
       ),
   },
 
-  // {
-  //   path: 'patient',
-  //   loadChildren: () =>
-  //     import('./patient-dashboard/patient-dashboard.module').then(
-  //       (m) => m.PatientDashboardModule
-  //     ),
-  // },
+  {
+    path: 'patient',
+    loadChildren: () =>
+      import('./patient-dashboard/patient-dashboard.module').then(
+        (m) => m.PatientDashboardModule
+      ),
+  },
   // { path: 'clinics', component: ClinicsListComponent },
   // { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
   // { path: 'clinics/add', component: ClinicsAddComponent },
