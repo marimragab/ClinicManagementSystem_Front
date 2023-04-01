@@ -10,9 +10,14 @@ export class PatientPageComponent {
   constructor(private user: AuthService) {}
 
   userInfo: any;
+  sideBarOpen = true;
 
   ngOnInit(): void {
     this.userInfo = this.user.getUser();
     console.log(this.userInfo);
+  }
+
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
   }
 }

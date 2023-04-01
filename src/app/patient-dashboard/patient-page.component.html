@@ -1,1 +1,12 @@
-<p>patient-page works!</p>
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-patient-sidebar></app-patient-sidebar>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-patient-navbar
+      (toggleSidenavbarForMe)="sideBarToggler()"
+    ></app-patient-navbar>
+    <!-- <app-admin-home></app-admin-home> -->
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
