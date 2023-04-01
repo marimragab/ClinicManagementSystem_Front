@@ -5,7 +5,6 @@ import { AppointmentDetailsComponent } from '../appointment/appointment-details/
 import { ListAppointmentsComponent } from '../appointment/list-appointments/list-appointments.component';
 import { UpdateAppointmentComponent } from '../appointment/update-appointment/update-appointment.component';
 import { ClinicEditByAdminComponent } from '../clinics/clinic-edit-by-admin/clinic-edit-by-admin.component';
-import { ClinicEditByManagerComponent } from '../clinics/clinic-edit-by-manager/clinic-edit-by-manager.component';
 import { ClinicsAddComponent } from '../clinics/clinics-add/clinics-add.component';
 import { ClinicsDetailsComponent } from '../clinics/clinics-details/clinics-details.component';
 import { ClinicsListComponent } from '../clinics/clinics-list/clinics-list.component';
@@ -26,10 +25,7 @@ import { PrescriptionAddComponent } from '../prescription/prescription-add/presc
 import { PrescriptionDetailsComponent } from '../prescription/prescription-details/prescription-details.component';
 import { PrescriptionEditComponent } from '../prescription/prescription-edit/prescription-edit.component';
 import { PrescriptionListComponent } from '../prescription/prescription-list/prescription-list.component';
-import { ReporEditComponent } from '../reports/repor-edit/repor-edit.component';
-import { ReportAddComponent } from '../reports/report-add/report-add.component';
-import { ReportDetailsComponent } from '../reports/report-details/report-details.component';
-import { ReportListComponent } from '../reports/report-list/report-list.component';
+
 import { SpecialistAddComponent } from '../specialist/specialist-add/specialist-add.component';
 import { SpecialistDetailsComponent } from '../specialist/specialist-details/specialist-details.component';
 import { SpecialistEditComponent } from '../specialist/specialist-edit/specialist-edit.component';
@@ -39,6 +35,11 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
+import { ReportsListComponent } from '../reports/reports-list/reports-list.component';
+import { AllAppointmentComponent } from '../reports/all-appointment/all-appointment.component';
+import { DetailsByDoctorComponent } from '../prescription/details-by-doctor/details-by-doctor.component';
+import { DetailsByPaientComponent } from '../prescription/details-by-paient/details-by-paient.component';
+import { DetailsByClinicComponent } from '../prescription/details-by-clinic/details-by-clinic.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"adminhome", pathMatch:"full"},
@@ -53,7 +54,6 @@ const routes: Routes = [
   { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
   { path: 'clinics/add', component: ClinicsAddComponent },
   { path: 'clinics/editbyadmin/:id', component: ClinicEditByAdminComponent },
-  { path: 'clinics/editbymanager/:id', component: ClinicEditByManagerComponent },
 
 
 
@@ -73,12 +73,20 @@ const routes: Routes = [
   {path:"prescription/details/:id",component:PrescriptionDetailsComponent},
   {path:"prescription/add",component:PrescriptionAddComponent},
   {path:"prescription/edit/:id",component:PrescriptionEditComponent},
+  {path:"prescription/detailsclinic/:id",component:DetailsByClinicComponent},
+  {path:"prescription/detailspatient/:id",component:DetailsByPaientComponent},
+  {path:"prescription/detailsdoctor/:id",component:DetailsByDoctorComponent},
 
 
-  {path:"report",component:ReportListComponent},
-  {path:"report/details/:id",component:ReportDetailsComponent},
-  {path:"report/add",component:ReportAddComponent},
-  {path:"report/edit/:id",component:ReporEditComponent},
+
+  {path:"report",component:ReportsListComponent},
+  {path:"report/allappointment",component:AllAppointmentComponent},
+  {
+    path: 'report',
+    loadChildren: () =>
+      import('../reports/reports.module').then((m) => m.ReportsModule),
+  },
+
 
   {path:"specialist",component:SpecialistListComponent},
   {path:"specialist/details/:id",component:SpecialistDetailsComponent},

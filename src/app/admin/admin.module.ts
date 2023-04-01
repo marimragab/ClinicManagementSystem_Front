@@ -15,6 +15,10 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { ClinicsModule } from '../clinics/clinics.module';
+import { ReportsModule } from '../reports/reports.module';
+import { SpecialistModule } from '../specialist/specialist.module';
+import { PrescriptionModule } from '../prescription/prescription.module';
+
 @NgModule({
   declarations: [
     AdminHomeComponent,
@@ -34,7 +38,10 @@ import { ClinicsModule } from '../clinics/clinics.module';
     MatMenuModule,
     MatIconModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    ReportsModule,
+    SpecialistModule,
+    PrescriptionModule,
   ],
   exports:[
     AdminHomeComponent,

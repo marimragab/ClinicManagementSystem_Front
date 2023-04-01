@@ -1,1 +1,35 @@
-<p>specialist-add works!</p>
+<div class="form">
+    <div mat-dialog-title>
+      <h1><b>Specialist Form</b></h1>
+    </div>
+    <form [formGroup]="reactiveForm" (ngSubmit)="save(reactiveForm.value)">
+      <div mat-dialog-content>
+       
+  
+        <div class="row">
+          <div class="form-group col-xs-3">
+            <mat-form-field appearance="outline">
+              <mat-label>Specialty</mat-label>
+              <input matInput type="text" formControlName="specialty" />
+            </mat-form-field>
+            <mat-radio-group
+              aria-label="Select an option"
+              formControlName="availability"
+            >
+              <mat-label><b>Availability</b></mat-label>
+              <mat-radio-button value="true">true</mat-radio-button>
+              <mat-radio-button value="false">false</mat-radio-button>
+            </mat-radio-group>
+         
+          
+          </div>
+        </div>
+       
+
+      </div>
+      <div mat-dialog-actions>
+        <button mat-raised-button [routerLink]="['/specialist']">Cancel</button>
+        <button mat-raised-button color="primary" >Save</button>
+      </div>
+    </form>
+  </div>
