@@ -4,14 +4,12 @@ import { EmployeesAddComponent } from './employees-add/employees-add.component';
 import { EmployeesDetailsComponent } from './employees-details/employees-details.component';
 import { EmployeesListComponent } from './employees-list/employees-list.component';
 import { EmployeesUpdateComponent } from './employees-update/employees-update.component';
-import { EmployessUpdateByManagerComponent } from './employess-update-by-manager/employess-update-by-manager.component';
 
 const routes: Routes = [
   {path:"list",component:EmployeesListComponent},
   {path:"details/:id",component:EmployeesDetailsComponent},
   {path:"add",component:EmployeesAddComponent},
   {path:"edit/:id",component:EmployeesUpdateComponent},
-  {path:"editbymanager/:id",component:EmployessUpdateByManagerComponent},
   // {path:"delete/:id",component:EmployeesDetailsComponent}
 ];
 

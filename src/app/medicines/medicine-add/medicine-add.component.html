@@ -1,1 +1,30 @@
-<p>medicine-add works!</p>
+<div class="form">
+    <div mat-dialog-title>
+      <h1><b>Medicine Form</b></h1>
+    </div>
+    <form [formGroup]="reactiveForm" (ngSubmit)="save(reactiveForm.value)">
+      
+  
+        <div class="row">
+          <div class="form-group col-xs-3">
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput type="text" formControlName="name" />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput type="text" formControlName="description" />
+              </mat-form-field>
+          
+         
+          </div>
+        </div>
+       
+     
+   
+      <div mat-dialog-actions>
+        <button mat-raised-button>Cancel</button>
+        <button mat-raised-button color="primary" >Save</button>
+      </div>
+    </form>
+  </div>

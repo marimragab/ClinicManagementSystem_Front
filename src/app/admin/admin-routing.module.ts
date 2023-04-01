@@ -16,7 +16,6 @@ import { EmployeesAddComponent } from '../employees/employees-add/employees-add.
 import { EmployeesDetailsComponent } from '../employees/employees-details/employees-details.component';
 import { EmployeesListComponent } from '../employees/employees-list/employees-list.component';
 import { EmployeesUpdateComponent } from '../employees/employees-update/employees-update.component';
-import { EmployessUpdateByManagerComponent } from '../employees/employess-update-by-manager/employess-update-by-manager.component';
 import { MedicineAddComponent } from '../medicines/medicine-add/medicine-add.component';
 import { MedicineDetailsComponent } from '../medicines/medicine-details/medicine-details.component';
 import { MedicineEditComponent } from '../medicines/medicine-edit/medicine-edit.component';
@@ -115,10 +114,7 @@ const routes: Routes = [
   { path: 'employees/details/:id', component: EmployeesDetailsComponent },
   { path: 'employees/add', component: EmployeesAddComponent },
   { path: 'employees/edit/:id', component: EmployeesUpdateComponent },
-  {
-    path: 'employees/editbymanager/:id',
-    component: EmployessUpdateByManagerComponent,
-  },
+ 
 
   { path: 'appointment', component: AddAppointmentComponent },
   { path: 'appointment/details/:id', component: AppointmentDetailsComponent },

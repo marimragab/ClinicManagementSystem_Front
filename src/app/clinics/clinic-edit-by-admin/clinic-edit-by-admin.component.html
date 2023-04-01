@@ -105,7 +105,7 @@
 <!--    
     </form> -->
 <!-- </div> -->
-<div class="form">
+<!-- <div class="form">
     <div mat-dialog-title>
       <h1><b>Clinic Form</b></h1>
     </div>
@@ -174,7 +174,174 @@
         <button mat-raised-button color="primary" >Save</button>
       </div>
     </form>
-  </div>
+  </div> -->
 
 
   <!-- (ngSubmit)="save(reactiveForm.value)" -->
+
+
+
+
+
+
+
+  <div class="container mat-elevation-z8 col-8">
+    <form
+      id="clinicForm"
+      [formGroup]="clinicForm"
+      
+      class="container p-3 m-auto"
+    >
+      <div class="example-container"  >
+        <p class="fw-bold lead fs-6">Please Enter City</p>
+        <mat-form-field appearance="fill">
+          <mat-label>city</mat-label>
+          <input
+            matInput
+            placeholder="Enter city..."
+            formControlName="location.city"
+          />
+          <mat-error
+            *ngIf="
+              clinicValues['location.city'].invalid &&
+              (clinicValues['location.city'].dirty ||
+                clinicValues['location.city'].touched)
+            "
+            >city is required..</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <p class="fw-bold lead fs-6">Please Enter street</p>
+        <mat-form-field appearance="fill">
+          <mat-label>street</mat-label>
+          <input
+            matInput
+            placeholder="Enter street..."
+            formControlName="location.street"
+          />
+          <mat-error
+            *ngIf="
+              clinicValues['location.street'].invalid &&
+              (clinicValues['location.street'].dirty ||
+                clinicValues['location.street'].touched)
+            "
+            >street is required..</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <p class="fw-bold lead fs-6">Please Enter building</p>
+        <mat-form-field appearance="fill">
+          <mat-label>building</mat-label>
+          <input
+            matInput
+            placeholder="Enter building..."
+            formControlName="location.building"
+          />
+          <mat-error
+            *ngIf="
+              clinicValues['location.building'].invalid &&
+              (clinicValues['location.building'].dirty ||
+                clinicValues['location.building'].touched)
+            "
+            >building is required..</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <p class="fw-bold lead fs-6">Please Enter mobilePhone</p>
+        <mat-form-field appearance="fill">
+          <mat-label>mobilePhone</mat-label>
+          <input
+            matInput
+            placeholder="Enter mobilePhone..."
+            formControlName="mobilePhone"
+          />
+          <mat-error
+            *ngIf="
+              clinicValues['mobilePhone'].invalid &&
+              (clinicValues['mobilePhone'].dirty ||
+                clinicValues['mobilePhone'].touched)
+            "
+            >mobilePhone is required..</mat-error
+          >
+        </mat-form-field>
+      </div>
+  
+     
+  
+      <div class="example-container">
+        <p class="fw-bold lead">Please Select Doctor</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Select Doctor..</mat-label>
+          <mat-select
+            (selectionChange)="onDoctorSelected($event.value)"
+            formControlName="doctors" multiple
+          >
+            <mat-option *ngFor="let doctor of doctors" [value]="doctor._id">
+              {{ doctor.firstName | titlecase }}
+              {{ doctor.lastName | titlecase }} -
+              {{ doctor.specialty.specialty | titlecase }}
+            </mat-option>
+          </mat-select>
+  
+          <mat-error
+            *ngIf="
+              clinicValues['doctors'].invalid &&
+              (clinicValues['doctors'].dirty ||
+                clinicValues['doctors'].touched)
+            "
+            >Doctor is required..</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <!-- <div class="example-container">
+        <p class="fw-bold lead">Please Select Manger</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Select manager..</mat-label>
+          <mat-select
+            (selectionChange)="onMangerSelected($event.value)"
+            formControlName="manager"
+          >
+            <mat-option *ngFor="let manger of managers" [value]="manager._id">
+              {{ managers.firstName | titlecase }}
+              {{ managers.lastName | titlecase }} 
+            </mat-option>
+          </mat-select>
+  
+          <mat-error
+            *ngIf="
+              clinicValues['manager'].invalid &&
+              (clinicValues['manager'].dirty ||
+              clinicValues['manager'].touched)
+            "
+            >manager is required..</mat-error
+          >
+        </mat-form-field>
+      </div> -->
+  
+     
+  
+        <!-- <mat-error
+          *ngIf="
+            appointmentValues['date'].invalid &&
+            (appointmentValues['date'].dirty || appointmentValues['date'].touched)
+          "
+          >Appointment Date is required..</mat-error
+        >
+        <mat-error *ngIf="appointmentValues['date'].errors['pattern']"
+          >Appointment Date Must be on format DD/MM/YYYY</mat-error
+        > -->
+  
+        <!-- The date doesnot displayed on the input -->
+        
+   
+  
+   
+  
+      <div class="example-button-row">
+        <button mat-raised-button color="primary">Add Clinic</button>
+      </div>
+    </form>
+  </div>
