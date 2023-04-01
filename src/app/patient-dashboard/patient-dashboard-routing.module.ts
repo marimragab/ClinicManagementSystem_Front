@@ -1,10 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddAppointmentComponent } from '../appointment/add-appointment/add-appointment.component';
+import { PatientPageComponent } from './patient-page.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'patient',
+    component: PatientPageComponent,
+    children: [
+      { path: '', redirectTo: 'patient', pathMatch: 'full' },
+      { path: 'profile', component: PatientProfileComponent },
+      { path: 'appointment/book', component: AddAppointmentComponent },
+
+      //routes for invoices: see his daily invoice after doing reports
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PatientDashboardRoutingModule { }
+export class PatientDashboardRoutingModule {}
