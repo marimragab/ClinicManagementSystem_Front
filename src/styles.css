@@ -13,7 +13,23 @@
 @import "./assets/vendor/animate/animate.css";
 @import "./assets/vendor/owl-carousel/css/owl.carousel.css"; */
 /* @import "./assets/img/bg-doctor.png"; */
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-expansion-panel {
+  background-color: #abe7f6;
+  border: 1px solid #95dff2;
+}
 
+.mat-expansion-panel-header {
+  background-color: #4eb5fe;
+}
 
+.mat-expansion-panel-header.mat-expanded {
+  background-color: #DDD;
+}
