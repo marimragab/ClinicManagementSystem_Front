@@ -22,7 +22,7 @@ import { ReportPatientDailyAppointmentComponent } from './report-patient-daily-a
 import { ReportAppointmentReportForaDayComponent } from './report-appointment-report-fora-day/report-appointment-report-fora-day.component';
 import { ReportClinicAppointmentReportForaDayComponent } from './report-clinic-appointment-report-fora-day/report-clinic-appointment-report-fora-day.component';
 import { ReportDoctorAppointmentReportForaDayComponent } from './report-doctor-appointment-report-fora-day/report-doctor-appointment-report-fora-day.component';
-
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { ReportDoctorAppointmentReportForaDayComponent } from './report-doctor-a
     ReportPatientDailyAppointmentComponent,
     ReportAppointmentReportForaDayComponent,
     ReportClinicAppointmentReportForaDayComponent,
-    ReportDoctorAppointmentReportForaDayComponent
+    ReportDoctorAppointmentReportForaDayComponent,
   ],
   imports: [
     CommonModule,
@@ -51,9 +51,8 @@ import { ReportDoctorAppointmentReportForaDayComponent } from './report-doctor-a
     FormsModule,
     NgxMatTimepickerModule,
     MatTableModule,
-    MatPaginatorModule
-    
-    
-  ]
+    MatPaginatorModule,
+    MatCardModule,
+  ],
 })
-export class ReportsModule { }
+export class ReportsModule {}

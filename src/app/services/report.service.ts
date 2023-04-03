@@ -27,5 +27,19 @@ export class ReportService {
       this.baseurl + 'appointment/daily/clinic/' + id
     );
   }
+
+  //Get daily appointmets of patient
+  getDailyAppointmentsForPatient(id: number) {
+    return this.http.get<Appointment[]>(
+      this.baseurl + 'appointment/daily/patient/' + id
+    );
+  }
+
+  //Get daily appointmets of doctor
+  getDailyAppointmentsForDoctor(id: number) {
+    return this.http.get<Appointment[]>(
+      this.baseurl + 'appointment/daily/doctor/' + id
+    );
+  }
   constructor(public http: HttpClient) {}
 }

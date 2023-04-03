@@ -1,1 +1,58 @@
-<p>report-doctor-daily-appointment works!</p>
+<div class="m-auto p-5">
+  <div class="example-container">
+    <p class="fw-bold text-dark text-opacity-50">
+      Select Patient to Dispaly Todays' Appointments
+    </p>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Select Patient ...</mat-label>
+      <mat-select (selectionChange)="onDoctorSelected($event.value)">
+        <mat-option *ngFor="let doctor of doctors" [value]="doctor._id"
+          >{{ doctor.firstName | titlecase }}
+          {{ doctor.lastName | titlecase }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="text-center container col-6 mb-2 mb-2">
+  <ng-container *ngFor="let appointment of dailyAppointmentsForDoctor">
+    <ng-container *ngIf="data">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title
+            >Clinic {{ appointment.clinic.location.city }}</mat-card-title
+          >
+          <mat-card-subtitle>
+            {{ appointment.clinic.mobilePhone }}</mat-card-subtitle
+          >
+        </mat-card-header>
+        <hr />
+        <mat-card-content>
+          Patient: {{ appointment.patient.firstName }}
+          {{ appointment.patient.lastName }} <br /><br />
+
+          patient phone: {{ appointment.patient.phone }} <br /><br />
+          Appointment Date:
+          {{ appointment.date }}
+          <br /><br />
+
+          Appointment Time: {{ appointment.timeFrom }} to
+          {{ appointment.timeTo }} <br /><br />
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </ng-container>
+</div>
+
+<div class="alert alert-danger" *ngIf="error">
+  {{ error }}
+</div>
+
+<div class="alert alert-danger text-center col-6 m-auto" *ngIf="noappointments">
+  {{ noappointments }}
+</div>
+
+<!-- See if this error the next time -->
+<!-- all the doctors have the same appointments for the same patients at the same time -->

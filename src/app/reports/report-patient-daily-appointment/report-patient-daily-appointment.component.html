@@ -1,1 +1,54 @@
-<p>report-patient-daily-appointment works!</p>
+<div class="m-auto p-5">
+  <div class="example-container">
+    <p class="fw-bold text-dark text-opacity-50">
+      Select Patient to Dispaly Todays' Appointments
+    </p>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Select Patient ...</mat-label>
+      <mat-select (selectionChange)="onPatientSelected($event.value)">
+        <mat-option *ngFor="let patient of patients" [value]="patient._id"
+          >{{ patient.firstName | titlecase }}
+          {{ patient.lastName | titlecase }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="text-center container col-6 mb-2">
+  <ng-container *ngFor="let appointment of dailyAppointmentsForPatient">
+    <ng-container *ngIf="data">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title
+            >Appointment Clinic
+            {{ appointment.clinic.location.city }}</mat-card-title
+          >
+          <mat-card-subtitle>
+            {{ appointment.clinic.mobilePhone }}</mat-card-subtitle
+          >
+        </mat-card-header>
+        <hr />
+        <mat-card-content>
+          Appointment Doctor: {{ appointment.doctorName.firstName }}
+          {{ appointment.doctorName.lastName }} <br />
+
+          Appointment Date: {{ appointment.date }}
+          <br />
+
+          Appointment Time: {{ appointment.timeFrom }} to
+          {{ appointment.timeTo }} <br />
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </ng-container>
+</div>
+
+<div class="alert alert-danger" *ngIf="error">
+  {{ error }}
+</div>
+
+<div class="alert alert-danger text-center col-6 m-auto" *ngIf="noappointments">
+  {{ noappointments }}
+</div>
