@@ -1,0 +1,102 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  max-width: 1050px;
+  color: black;
+ 
+}
+
+mat-form-field{
+   display: flex;
+   justify-content: left;
+   background-color: aliceblue;
+}
+.mat-elevation-z8 {
+  width: 100%;
+  color: black;
+  
+
+  
+}
+table{
+  background-color: rgb(244, 252, 252);
+  color: black;
+}
+.mdc-data-table__cell{
+  color: black;
+}
+.mdc-data-table__header-cell{
+  color: black;
+  background-color: rgb(19, 135, 237);
+}
+.mat-mdc-paginator{
+  color: black;
+  background-color: rgb(175, 239, 235);
+}
+button{
+  background-color: rgb(161, 161, 234);
+  display: inline;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #d3bdbd;
+}
+
+.filter[input]{
+  background-color: #d3bdbd;
+  display: flex;
+  left: 150px;
+}
+.matInput{
+  background-color: #d3bdbd;
+}
+.add{
+  display: flex;
+  right: 350px;
+  margin-bottom: 15px;
+}
+.mdc-data-table__header-cell{
+  background:crimson;
+}
+
+
+
+
+
+
+
+
+/* 
+ table {
+   width: 100px;
+    height: 100px;
+    color: black;
+    background-color: rgb(175, 239, 235);
+    display: flex;
+    justify-content: center;
+     margin: auto; 
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .mdc-data-table__cell{
+    color: black;
+  }
+  .mdc-data-table__header-cell{
+    color: black;
+  }
+  .mat-mdc-paginator{
+    color: black;
+    background-color: rgb(175, 239, 235);
+  }
+  /* .main{
+    width: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }  */ 

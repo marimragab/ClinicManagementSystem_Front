@@ -1,0 +1,72 @@
+
+<div  class="form-container">
+ 
+<form [formGroup]="doctorForm">
+  <h1>New Doctor</h1>
+  <div class="form-group">
+    <label for="myText">SSN</label>
+    <input id="myText" type="number" formControlName="SSN" class="my-text">
+  </div>
+
+  <div class="form-group">
+      <label for="myText">firstName</label>
+      <input id="myText" type="text" formControlName="firstName" class="my-text">
+    </div>
+
+
+    <div class="form-group">
+      <label for="lastName">lastName</label>
+      <input id="lastName" type="text" formControlName="lastName" class="my-text">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">phone</label>
+      <input id="phone" type="text" formControlName="phone" class="my-text">
+    </div>
+
+    <div class="form-group">
+      <label for="age">age</label>
+      <input id="age" type="number" formControlName="age" class="my-text">
+
+      <label for="email">email </label>
+      <input id="email" type="email" formControlName="email" class="my-text">
+
+      
+      <label for="password">password </label>
+      <input id="password" type="password" formControlName="password" class="my-text">
+    </div>
+
+    <div formGroupName="address" class="address">
+      <h2>Address</h2>
+    
+      <label for="address.street">Street </label>
+      <input id="street" type="text" formControlName="street" class="my-text">
+    
+      <label for="city">City </label>
+      <input id="city" type="text" formControlName="city" class="my-text">
+    
+      <label for="building">Building </label>
+      <input id="building" type="number" formControlName="building" class="my-text">
+      
+    
+   
+    </div>
+
+ 
+  <button type="submit" (click)="onSubmit()"  >Add</button>
+  <button type="submit" (click)="back()">Back</button>
+
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+<form [formGroup]="doctorForm" >
+
+    <div class="form-group">
+      <label for="myText">SSN</label>
+      <input id="myText" type="number" formControlName="SSN" class="my-text" [value]="doctor.SSN">
+    </div>
+  
+    <div class="form-group">
+        <label for="myText">firstName</label>
+        <input id="myText" type="text" formControlName="firstName" class="my-text" [value]="doctor.firstName">
+      </div>
+  
+  
+      <div class="form-group">
+        <label for="lastName">lastName</label>
+        <input id="lastName" type="text" formControlName="lastName" class="my-text" [value]="doctor.lastName">
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">phone</label>
+        <input id="phone" type="text" formControlName="phone" class="my-text" [value]="doctor.phone">
+      </div>
+  
+      <div class="form-group">
+        <label for="age">age</label>
+        <input id="age" type="number" formControlName="age" class="my-text" [value]="doctor.age">
+
+       </div>
+  
+  
+  
+   
+    <button type="submit" (click)="onSubmit()">Add</button>
+  
+  </form>
+  
+  
+  
+  
