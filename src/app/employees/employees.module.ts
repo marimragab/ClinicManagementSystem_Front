@@ -7,7 +7,6 @@ import { EmployeesListComponent } from './employees-list/employees-list.componen
 import { EmployeesAddComponent } from './employees-add/employees-add.component';
 import { EmployeesDetailsComponent } from './employees-details/employees-details.component';
 import { EmployeesUpdateComponent } from './employees-update/employees-update.component';
-import { EmployessUpdateByManagerComponent } from './employess-update-by-manager/employess-update-by-manager.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -20,16 +19,20 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import {MatDividerModule} from '@angular/material/divider';
+import {MatDividerModule} from '@angular/material/divider'
+
+
 @NgModule({
   declarations: [
     EmployeesListComponent,
     EmployeesAddComponent,
     EmployeesDetailsComponent,
     EmployeesUpdateComponent,
-    EmployessUpdateByManagerComponent
+    
   ],
   imports: [
+    MatProgressBarModule,
+    MatDividerModule,
     CommonModule,
     EmployeesRoutingModule,
     RouterModule,
@@ -47,13 +50,14 @@ import {MatDividerModule} from '@angular/material/divider';
      MatRadioModule,
      ReactiveFormsModule,
      MatCardModule,
-     MatProgressBarModule,
-     MatDividerModule,
+  
+     
+     
   ],
   exports :[ EmployeesListComponent,
     EmployeesAddComponent,
     EmployeesDetailsComponent,
     EmployeesUpdateComponent,
-    EmployessUpdateByManagerComponent]
+    ]
 })
 export class EmployeesModule { }

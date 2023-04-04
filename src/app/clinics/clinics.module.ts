@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+
 //import { ClinicUpdateByManagerComponent } from './clinic-update-by-manager/clinic-update-by-manager.component';
 
 @NgModule({
@@ -43,6 +44,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatSelectModule,
     MatRadioModule,
     ReactiveFormsModule,
+  
   ],
   exports: [
     ClinicsListComponent,

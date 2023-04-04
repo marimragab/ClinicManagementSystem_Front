@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ClinicsListComponent } from './clinics/clinics-list/clinics-list.component';
-import { ClinicsDetailsComponent } from './clinics/clinics-details/clinics-details.component';
-import { ClinicsAddComponent } from './clinics/clinics-add/clinics-add.component';
-import { ClinicEditByAdminComponent } from './clinics/clinic-edit-by-admin/clinic-edit-by-admin.component';
-import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
-import { EmployeesDetailsComponent } from './employees/employees-details/employees-details.component';
-import { EmployeesAddComponent } from './employees/employees-add/employees-add.component';
-import { EmployeesUpdateComponent } from './employees/employees-update/employees-update.component';
-import { EmployessUpdateByManagerComponent } from './employees/employess-update-by-manager/employess-update-by-manager.component';
-import { ListPatientsComponent } from './patient/list-patients/list-patients.component';
-import { AddAppointmentComponent } from './appointment/add-appointment/add-appointment.component';
-import { AppointmentDetailsComponent } from './appointment/appointment-details/appointment-details.component';
-import { UpdateAppointmentComponent } from './appointment/update-appointment/update-appointment.component';
-import { ListAppointmentsComponent } from './appointment/list-appointments/list-appointments.component';
+// import { ClinicsListComponent } from './clinics/clinics-list/clinics-list.component';
+// import { ClinicsDetailsComponent } from './clinics/clinics-details/clinics-details.component';
+// import { ClinicsAddComponent } from './clinics/clinics-add/clinics-add.component';
+// import { ClinicEditByAdminComponent } from './clinics/clinic-edit-by-admin/clinic-edit-by-admin.component';
+// import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
+// import { EmployeesDetailsComponent } from './employees/employees-details/employees-details.component';
+// import { EmployeesAddComponent } from './employees/employees-add/employees-add.component';
+// import { EmployeesUpdateComponent } from './employees/employees-update/employees-update.component';
+// import { ListPatientsComponent } from './patient/list-patients/list-patients.component';
+// import { AddAppointmentComponent } from './appointment/add-appointment/add-appointment.component';
+// import { AppointmentDetailsComponent } from './appointment/appointment-details/appointment-details.component';
+// import { UpdateAppointmentComponent } from './appointment/update-appointment/update-appointment.component';
+// import { ListAppointmentsComponent } from './appointment/list-appointments/list-appointments.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PatientProfileComponent } from './patient-dashboard/patient-profile/patient-profile.component';
@@ -32,14 +31,14 @@ const routes: Routes = [
   { path: 'admin/dashboard', component: AdminViewComponent },
   // { path: 'patient/profile', component: PatientProfileComponent },
 
-  { path: 'clinics', component: ClinicsListComponent },
-  { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
-  { path: 'clinics/add', component: ClinicsAddComponent },
-  { path: 'clinics/editbyadmin/:id', component: ClinicEditByAdminComponent },
-  {
-    path: 'clinics/editbymanager/:id',
-    component: ClinicEditByAdminComponent,
-  },
+  // { path: 'clinics', component: ClinicsListComponent },
+  // { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
+  // { path: 'clinics/add', component: ClinicsAddComponent },
+  // { path: 'clinics/editbyadmin/:id', component: ClinicEditByAdminComponent },
+  // {
+  //   path: 'clinics/editbymanager/:id',
+  //   component: ClinicEditByAdminComponent,
+  // },
   // {
   //   path: 'patient',
   //   loadChildren: () =>
@@ -92,11 +91,11 @@ const routes: Routes = [
   //   component: EmployessUpdateByManagerComponent,
   // },
 
-  { path: 'appointment', component: AddAppointmentComponent },
-  { path: 'appointment/details/:id', component: AppointmentDetailsComponent },
-  { path: 'appointment/add', component: AddAppointmentComponent },
-  { path: 'appointment/edit/:id', component: UpdateAppointmentComponent },
-  { path: 'appointment/list', component: ListAppointmentsComponent },
+  // { path: 'appointment', component: AddAppointmentComponent },
+  // { path: 'appointment/details/:id', component: AppointmentDetailsComponent },
+  // { path: 'appointment/add', component: AddAppointmentComponent },
+  // { path: 'appointment/edit/:id', component: UpdateAppointmentComponent },
+  // { path: 'appointment/list', component: ListAppointmentsComponent },
 ];
 
 @NgModule({
