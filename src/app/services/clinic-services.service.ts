@@ -21,8 +21,8 @@ export class ClinicServicesService {
     return this.http.put<Clinics>(this.baseurl + clinic._id, clinic);
   }
 
-  updateClinicByAdmin(clinic: Clinics) {
-    return this.http.put<Clinics>(this.baseurl + clinic._id, clinic);
+  updateClinicByAdmin(id: number, clinic: Clinics) {
+    return this.http.patch<Clinics>(this.baseurl + 'admin/' + id, clinic);
   }
   deleteById(id: number) {
     return this.http.delete<Clinics>(this.baseurl + id);

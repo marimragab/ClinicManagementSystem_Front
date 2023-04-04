@@ -15,9 +15,7 @@ import { ClinicsAddComponent } from '../clinics-add/clinics-add.component';
 export class ClinicsListComponent implements OnInit {
   displayedColumns: string[] = [
     '_id',
-    'city',
-    'street',
-    'building',
+    'location',
     'mobilePhone',
     'doctors',
     'manager',
@@ -34,8 +32,8 @@ export class ClinicsListComponent implements OnInit {
 
   ngOnInit() {
     this.clinicsservices.getAllClinc().subscribe((data: any) => {
-      this.clinic = data;
-      // console.log( data);
+      this.clinic = data.Data;
+      console.log(data.Data);
       this.dataSource = new MatTableDataSource(this.clinic);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
@@ -65,5 +63,4 @@ export class ClinicsListComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  
 }
