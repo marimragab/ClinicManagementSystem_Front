@@ -1,0 +1,88 @@
+<div class="container text-center mt-5 col-lg-6">
+  <mat-card>
+    <mat-card-content>
+      <h2>Book Appointment</h2>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Specialty</mat-label>
+          <mat-select
+            [(ngModel)]="selectedSpecialty"
+            (selectionChange)="onSpecialtyChange($event.value)"
+          >
+            <mat-option
+              *ngFor="let specialty of specialties"
+              [value]="specialty['specialty']"
+            >
+              {{ specialty["specialty"] }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Doctor</mat-label>
+          <mat-select
+            [(ngModel)]="selectedDoctorId"
+            (selectionChange)="onDoctorChange($event.value)"
+          >
+            <mat-option
+              *ngFor="let doctor of doctorsWithSelectedSpecialty"
+              [value]="doctor['_id']"
+            >
+              {{ doctor["firstName"] }} {{ doctor["lastName"] }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline" class="example-form-field">
+          <mat-label>Choose a date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="datepicker"
+            (dateChange)="dateChanged($event.value)"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="datepicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" matDatepickerApply>
+                Apply
+              </button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div *ngIf="selectedDoctorAvailableAppointments">
+        <mat-radio-group >
+          <mat-list>
+            <mat-list-item
+              *ngFor="let appt of selectedDoctorAvailableAppointments"
+            >
+              <mat-radio-button
+                [value]="appt"
+                (click)="selectAppointment(appt)"
+              >
+                <h3>{{ appt.timeFrom }} : {{ appt.timeTo }}</h3>
+                <p>Available</p>
+              </mat-radio-button>
+            </mat-list-item>
+          </mat-list>
+        </mat-radio-group>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions class="m-auto">
+      <button mat-raised-button color="primary" (click)="bookAppointment()">
+        Book Appointment
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

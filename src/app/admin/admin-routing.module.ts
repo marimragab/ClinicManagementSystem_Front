@@ -41,68 +41,57 @@ import { DetailsByPaientComponent } from '../prescription/details-by-paient/deta
 import { DetailsByClinicComponent } from '../prescription/details-by-clinic/details-by-clinic.component';
 
 const routes: Routes = [
-  {path:"",redirectTo:"adminhome", pathMatch:"full"},
-  {path:"adminhome",component:AdminHomeComponent},
-  {path:"admindashboard",component:AdminDashboardComponent},
-  {path:"adminheader",component:AdminHeaderComponent},
-  {path:"adminsidenav",component:AdminSidenavComponent},
-  {path:"adminview",component:AdminViewComponent},
-
+  { path: '', redirectTo: 'adminhome', pathMatch: 'full' },
+  { path: 'adminhome', component: AdminHomeComponent },
+  { path: 'admindashboard', component: AdminDashboardComponent },
+  { path: 'adminheader', component: AdminHeaderComponent },
+  { path: 'adminsidenav', component: AdminSidenavComponent },
+  { path: 'adminview', component: AdminViewComponent },
 
   { path: 'clinics', component: ClinicsListComponent },
   { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
   { path: 'clinics/add', component: ClinicsAddComponent },
   { path: 'clinics/editbyadmin/:id', component: ClinicEditByAdminComponent },
 
-
-
   { path: 'doctor', component: DoctorListComponent },
   { path: 'doctor/details/:id', component: DoctorDetailsComponent },
   { path: 'doctor/add', component: DoctorAddComponent },
   { path: 'doctor/edit/:id', component: DoctorEditComponent },
 
+  { path: 'medicine', component: MedicineListComponent },
+  { path: 'medicine/details/:id', component: MedicineDetailsComponent },
+  { path: 'medicine/add', component: MedicineAddComponent },
+  { path: 'medicine/edit/:id', component: MedicineEditComponent },
 
-  {path:"medicine",component:MedicineListComponent},
-  {path:"medicine/details/:id",component:MedicineDetailsComponent},
-  {path:"medicine/add",component:MedicineAddComponent},
-  {path:"medicine/edit/:id",component:MedicineEditComponent},
+  { path: 'prescription', component: PrescriptionListComponent },
+  { path: 'prescription/details/:id', component: PrescriptionDetailsComponent },
+  { path: 'prescription/add', component: PrescriptionAddComponent },
+  { path: 'prescription/edit/:id', component: PrescriptionEditComponent },
+  {
+    path: 'prescription/detailsclinic/:id',
+    component: DetailsByClinicComponent,
+  },
+  {
+    path: 'prescription/detailspatient/:id',
+    component: DetailsByPaientComponent,
+  },
+  {
+    path: 'prescription/detailsdoctor/:id',
+    component: DetailsByDoctorComponent,
+  },
 
-
-  {path:"prescription",component:PrescriptionListComponent},
-  {path:"prescription/details/:id",component:PrescriptionDetailsComponent},
-  {path:"prescription/add",component:PrescriptionAddComponent},
-  {path:"prescription/edit/:id",component:PrescriptionEditComponent},
-  {path:"prescription/detailsclinic/:id",component:DetailsByClinicComponent},
-  {path:"prescription/detailspatient/:id",component:DetailsByPaientComponent},
-  {path:"prescription/detailsdoctor/:id",component:DetailsByDoctorComponent},
-
-
-
-  {path:"report",component:ReportsListComponent},
-  {path:"report/allappointment",component:AllAppointmentComponent},
+  { path: 'report', component: ReportsListComponent },
+  { path: 'report/allappointment', component: AllAppointmentComponent },
   {
     path: 'report',
     loadChildren: () =>
       import('../reports/reports.module').then((m) => m.ReportsModule),
   },
 
-
-  {path:"specialist",component:SpecialistListComponent},
-  {path:"specialist/details/:id",component:SpecialistDetailsComponent},
-  {path:"specialist/add",component:SpecialistAddComponent},
-  {path:"specialist/edit/:id",component:SpecialistEditComponent},
-
-
-
-
-
-
-
-
-
-
-
-
+  { path: 'specialist', component: SpecialistListComponent },
+  { path: 'specialist/details/:id', component: SpecialistDetailsComponent },
+  { path: 'specialist/add', component: SpecialistAddComponent },
+  { path: 'specialist/edit/:id', component: SpecialistEditComponent },
 
   {
     path: 'patient',
@@ -114,19 +103,16 @@ const routes: Routes = [
   { path: 'employees/details/:id', component: EmployeesDetailsComponent },
   { path: 'employees/add', component: EmployeesAddComponent },
   { path: 'employees/edit/:id', component: EmployeesUpdateComponent },
- 
 
   { path: 'appointment', component: AddAppointmentComponent },
   { path: 'appointment/details/:id', component: AppointmentDetailsComponent },
   { path: 'appointment/add', component: AddAppointmentComponent },
   { path: 'appointment/edit/:id', component: UpdateAppointmentComponent },
   { path: 'appointment/list', component: ListAppointmentsComponent },
-
-
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AdminRoutingModule { }
+export class AdminRoutingModule {}

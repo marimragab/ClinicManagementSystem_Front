@@ -16,6 +16,10 @@ import { AppointmentDetailsComponent } from './appointment-details/appointment-d
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { BookAppointmentComponent } from './book-appointment/book-appointment.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     UpdateAppointmentComponent,
     ListAppointmentsComponent,
     AppointmentDetailsComponent,
+    BookAppointmentComponent,
   ],
   imports: [
     CommonModule,
@@ -41,12 +46,16 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatPaginatorModule,
     RouterModule,
     NgxMatTimepickerModule.setLocale('en-GB'),
+    MatCardModule,
+    MatListModule,
+    MatRadioModule,
   ],
   exports: [
     AddAppointmentComponent,
     UpdateAppointmentComponent,
     ListAppointmentsComponent,
     AppointmentDetailsComponent,
+    BookAppointmentComponent,
   ],
   providers: [],
 })

@@ -114,20 +114,20 @@ export class AddAppointmentComponent implements OnInit {
     console.log(dateChoiced._model.selection);
 
     const selectedDate = dateChoiced._model.selection;
-    const formattedDate = this.formatDate(selectedDate);
+    const formattedDate = formatDate(selectedDate);
 
     this.addAppointmentForm.controls.date.setValue(formattedDate);
   }
+}
 
-  formatDate(choicedDate: any) {
-    const date = new Date(choicedDate);
-    const formattedDate = date.toLocaleDateString('en-GB', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-    });
-    this.newdate = formattedDate;
-    console.log(this.newdate);
-    return formattedDate;
-  }
+export function formatDate(choicedDate) {
+  const date = new Date(choicedDate);
+  const formattedDate = date.toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  });
+  // this.newdate = formattedDate;
+  console.log(formattedDate);
+  return formattedDate;
 }

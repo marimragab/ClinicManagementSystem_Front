@@ -30,7 +30,7 @@ export class AppointmentService {
   }
 
   //Functionality For Patient
-  bookAppointment(id: number, patientId: number) {
+  bookAppointment(id: number, patientId: number, booked: boolean = true) {
     return this.http.patch(this.dbUrl + 'book/' + id, patientId);
   }
 }

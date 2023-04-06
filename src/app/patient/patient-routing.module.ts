@@ -6,22 +6,22 @@ import { ListPatientsComponent } from './list-patients/list-patients.component';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { UpdatePatientComponent } from './update-patient/update-patient.component';
 
-// const routes: Routes = [
-//   { path: '', component: ListPatientsComponent },
+const routes: Routes = [
+  { path: '', component: ListPatientsComponent },
 
-//   { path: 'list', component: ListPatientsComponent },
-//   {
-//     path: 'details/:id',
-//     component: PatientDetailsComponent,
-//   },
-//   {
-//     path: 'edit/:id',
-//     component: UpdatePatientComponent,
-//   },
-//   { path: 'add', component: AddPatientComponent },
-// ];
+  { path: 'list', component: ListPatientsComponent },
+  {
+    path: 'details/:id',
+    component: PatientDetailsComponent,
+  },
+  {
+    path: 'edit/:id',
+    component: UpdatePatientComponent,
+  },
+  { path: 'add', component: AddPatientComponent },
+];
 
-const routes: Routes = [];
+// const routes: Routes = [];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
