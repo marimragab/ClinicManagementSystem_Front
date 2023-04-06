@@ -43,6 +43,7 @@ export class AddAppointmentComponent implements OnInit {
   doctors: any[];
   clinics: any[];
 
+  //remove patient from add appointment form (no need for it)
   addAppointmentForm = new FormGroup({
     clinic: new FormControl('', [Validators.required]),
 
