@@ -28,7 +28,7 @@ export class MedicineListComponent implements OnInit {
 
   ngOnInit() {
     this.medService.getAllMedicine().subscribe((data: any) => {
-      this.med = data.Date;
+      this.med = data;
        console.log( data);
       this.dataSource = new MatTableDataSource(this.med);
       this.dataSource.sort = this.sort;

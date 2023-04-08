@@ -17,9 +17,9 @@ export class ClinicServicesService {
     return this.http.post(this.baseurl, clinic);
   }
 
-  updateClinicByManager(clinic: Clinics) {
-    return this.http.put<Clinics>(this.baseurl + clinic._id, clinic);
-  }
+  // updateClinicByManager(clinic: Clinics) {
+  //   return this.http.put<Clinics>(this.baseurl + clinic._id, clinic);
+  // }
 
   updateClinicByAdmin(id: number, clinic: Clinics) {
     return this.http.patch<Clinics>(this.baseurl + 'admin/' + id, clinic);

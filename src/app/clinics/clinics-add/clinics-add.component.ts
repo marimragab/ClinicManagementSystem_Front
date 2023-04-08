@@ -86,7 +86,7 @@ export class ClinicsAddComponent {
       Validators.required,
       Validators.pattern(/^01[0125][0-9]{8}$/),
     ]),
-    doctors: new FormControl('', [Validators.required]),
+    doctors: new FormControl(''),
     manager: new FormControl('', [Validators.required]),
     // availability: new FormControl('', [Validators.required]),
   });

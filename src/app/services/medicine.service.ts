@@ -17,9 +17,14 @@ export class MedicineService {
     return this.http.post(this.baseurl, med);
   }
 
-  updateMedicine(med: Medicine) {
-    return this.http.put<Medicine>(this.baseurl + med._id, med);
+  updateMedicine(id: number,med: Medicine) {
+    return this.http.patch<Medicine>(this.baseurl +'admin/'  +id, med);
   }
+
+
+
+
+
   deleteMedicine(id: number) {
     return this.http.delete<Medicine>(this.baseurl + id);
   }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Medicine } from 'src/app/models/medicine';
 import { MedicineService } from 'src/app/services/medicine.service';
@@ -10,27 +10,63 @@ import { MedicineService } from 'src/app/services/medicine.service';
   styleUrls: ['./medicine-add.component.css']
 })
 export class MedicineAddComponent {
-  med: Medicine = new Medicine(0,"","");
-  save(med: any) {
-    // this.clinicservices.addClinic(this.clinic).subscribe(data=>{
-    //     console.log(data);
-    //     this.router.navigateByUrl("/clinics");
-    //    })
-    console.log(med);
-    this.medService.addMedicine(med).subscribe((data) => {
-      console.log(data);
-      this.router.navigateByUrl('/medicine');
-    });
-  }
+  
   //reactiveForm: FormGroup;
+  // constructor(
+  //   public medService: MedicineService,
+  //   public router: Router
+  // ) {}
+
+
+
+
+
+
+
+
+
+  
   constructor(
     public medService: MedicineService,
     public router: Router
   ) {}
 
-  reactiveForm = new FormGroup({
-  
-    name: new FormControl(null),
-    description: new FormControl(null)
+  successMessage: string;
+  errorMessage: string;
+
+  showForm: boolean = true;
+  // managers: any[];
+
+  medicineForm = new FormGroup({
+    
+    name: new FormControl('',[Validators.required]),
+    description: new FormControl('', [Validators.required]),
+    
   });
+
+  get medicineValues() {
+    return this.medicineForm.controls;
+  }
+  addmedicine(med: any) {
+    this.successMessage = '';
+    this.errorMessage = '';
+    console.log(this.medicineForm);
+    console.log(this.medicineForm.value);
+    console.log(med);
+    this.medService.addMedicine(med).subscribe({
+      next: (data: any) => {
+        console.log(data);
+        this.successMessage = data.Message;
+        const form = document.getElementById('medicineForm') as HTMLFormElement;
+        form.reset();
+        this.showForm = false;
+      },
+      error: (error) => {
+        this.errorMessage = error;
+        console.log(error);
+      },
+    });
+  }
+
+
 }

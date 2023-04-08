@@ -1,4 +1,4 @@
-<div class="form">
+<!-- <div class="form">
     <div mat-dialog-title>
       <h1><b>Medicine Update</b></h1>
     </div>
@@ -27,4 +27,71 @@
         <button mat-raised-button color="primary" >Save</button>
       </div>
     </form>
+  </div> -->
+
+
+  <div class="container mat-elevation-z8 col-8" *ngIf="showForm">
+    <form
+      id="medicineForm"
+      [formGroup]="editMedicineForm"
+      class="container p-3 m-auto"
+      (ngSubmit)="updateMedicine(editMedicineForm.value)"
+    >
+      
+  <div class="row">
+      <div class="form-group col-xs-3">
+        <!-- <p class="fw-bold lead fs-6">Please Enter Medicine Name</p> -->
+        <mat-form-field appearance="fill">
+          <mat-label>Medicine Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter name..."
+            formControlName="name"
+          />
+          <mat-error
+            *ngIf="
+              medicineValues['name'].invalid &&
+              (medicineValues['name'].dirty ||
+              medicineValues['name'].touched)
+            "
+            >Medicine Name is required..</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Medicine Description</mat-label>
+          <input
+            matInput
+            placeholder="Enter Description..."
+            formControlName="description"
+          />
+          <mat-error
+            *ngIf="
+              medicineValues['description'].invalid &&
+              (medicineValues['description'].dirty ||
+              medicineValues['description'].touched)
+            "
+            >Medicine Description is required..</mat-error
+          >
+        </mat-form-field>
+      </div>
+    </div>
+  
+     
+  
+      <div class="example-button-row">
+        <button mat-raised-button  [routerLink]="['/medicine']">Cancel</button>
+        <button mat-raised-button color="primary">Edit Clinic</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="container">
+    <div class="alert alert-success text-center col-6" *ngIf="!showForm">
+      {{ successMessage }}
+    </div>
+  
+  
+  
+  <div class="alert alert-danger text-center col-6 m-auto" *ngIf="errorMessage">
+    {{ errorMessage }}
   </div>
