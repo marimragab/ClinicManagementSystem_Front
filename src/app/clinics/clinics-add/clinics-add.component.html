@@ -457,11 +457,15 @@
         />
         <mat-error
           *ngIf="
-            clinicValues['mobilePhone'].invalid &&
+            clinicValues['mobilePhone']?.errors['required'] &&
             (clinicValues['mobilePhone'].dirty ||
               clinicValues['mobilePhone'].touched)
           "
           >mobilePhone is required..</mat-error
+        >
+
+        <mat-error *ngIf="clinicValues['mobilePhone']?.errors['pattern']"
+          >Invalid mobilephone number...</mat-error
         >
       </mat-form-field>
     </div>

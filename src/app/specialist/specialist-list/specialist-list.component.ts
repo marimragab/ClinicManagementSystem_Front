@@ -1,4 +1,4 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -9,7 +9,7 @@ import { SpecialistAddComponent } from '../specialist-add/specialist-add.compone
 @Component({
   selector: 'app-specialist-list',
   templateUrl: './specialist-list.component.html',
-  styleUrls: ['./specialist-list.component.css']
+  styleUrls: ['./specialist-list.component.css'],
 })
 export class SpecialistListComponent {
   displayedColumns: string[] = [
@@ -27,7 +27,7 @@ export class SpecialistListComponent {
   @ViewChild(MatSort) sort!: MatSort;
   ngOnInit() {
     this.specialistService.getAllSpecialis().subscribe((data: any) => {
-      this.specialist = data;
+      this.specialist = data.Data;
       // console.log( data);
       this.dataSource = new MatTableDataSource(this.specialist);
       this.dataSource.sort = this.sort;

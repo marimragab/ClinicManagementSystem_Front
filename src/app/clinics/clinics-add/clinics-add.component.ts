@@ -91,9 +91,11 @@ export class ClinicsAddComponent {
     // availability: new FormControl('', [Validators.required]),
   });
 
+  
   get clinicValues() {
     return this.clinicForm.controls;
   }
+
   addclinic(clinic: any) {
     this.successMessage = '';
     this.errorMessage = '';

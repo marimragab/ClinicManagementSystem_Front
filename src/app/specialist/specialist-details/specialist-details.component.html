@@ -1,23 +1,21 @@
-<mat-card class="example-card"  >
-    <mat-card-header>
-      <mat-card-subtitle><b>specialty Details</b></mat-card-subtitle>
-     
-    </mat-card-header>
-    <mat-card-content>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-subtitle><b>specialty Details</b></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <pre>
+ID: {{ specialist._id }}              specialty: {{ specialist.specialty }}</pre
+    >
 
-      <pre>ID: {{specialist._id}}              specialty: {{specialist.specialty}}</pre> 
-     
-      <pre>Availability: {{specialist.availability}}</pre> 
-     
-      
-      <mat-divider></mat-divider>
-    </mat-card-content>
-    <!-- <mat-card-actions>
+    <pre>Availability: {{ specialist.availability }}</pre>
+
+    <mat-divider></mat-divider>
+  </mat-card-content>
+  <!-- <mat-card-actions>
       <button mat-button>LIKE</button>
       <button mat-button>SHARE</button>
     </mat-card-actions> -->
-  
-  </mat-card>
-  <button mat-fab extended [routerLink]="['/specialist']" color="primary">
-    Back
-  </button>
+</mat-card>
+<button mat-fab extended [routerLink]="['/specialist']" color="primary">
+  Back
+</button>

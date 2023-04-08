@@ -1,4 +1,4 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -10,7 +10,7 @@ import { PrescriptionAddComponent } from '../prescription-add/prescription-add.c
 @Component({
   selector: 'app-prescription-list',
   templateUrl: './prescription-list.component.html',
-  styleUrls: ['./prescription-list.component.css']
+  styleUrls: ['./prescription-list.component.css'],
 })
 export class PrescriptionListComponent {
   displayedColumns: string[] = [
@@ -18,12 +18,12 @@ export class PrescriptionListComponent {
     'clinic',
     'doctor',
     'patient',
-    
+
     'detailsbypres_id',
     'detailsbyclinic',
     'detailsbydoctor_id',
     'detailsbypatient_id',
-    
+
     'edit',
     'delete',
   ];
@@ -34,8 +34,8 @@ export class PrescriptionListComponent {
   @ViewChild(MatSort) sort!: MatSort;
   ngOnInit() {
     this.prescService.getAllPrescription().subscribe((data: any) => {
-      this.pres = data;
-      // console.log( data);
+      this.pres = data.Data;
+      console.log(data.Data);
       this.dataSource = new MatTableDataSource(this.pres);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;

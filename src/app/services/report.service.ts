@@ -41,5 +41,19 @@ export class ReportService {
       this.baseurl + 'appointment/daily/doctor/' + id
     );
   }
+
+  //Get appointments for doctor at selected day
+  getDoctorAppointmentsOnDay(date: string, id: number) {
+    return this.http.get<Appointment[]>(
+      `${this.baseurl}appointment/day/doctor/${id}?date=${date}`
+    );
+  }
+
+  //Get appointments for patient at selected day
+  getPatientAppointmentsOnDay(date: string, id: number) {
+    return this.http.get<Appointment[]>(
+      `${this.baseurl}appointment/day/patient/${id}?date=${date}`
+    );
+  }
   constructor(public http: HttpClient) {}
 }

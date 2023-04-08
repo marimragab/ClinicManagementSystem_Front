@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content container text-center mt-5">
   <div class="mat-elevation-z8">
     <mat-form-field>
       <mat-label>Filter</mat-label>
@@ -36,7 +36,7 @@
       <ng-container matColumnDef="patient">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Patient</th>
         <td mat-cell *matCellDef="let element">
-          {{ element?.patient.firstName }} {{ element?.patient.lastName }}
+          {{ element.patient?.firstName }} {{ element.patient?.lastName }}
         </td>
       </ng-container>
 
@@ -63,20 +63,21 @@
         <td mat-cell *matCellDef="let element">
           <!-- <button mat-raised-button>Preview</button> | -->
           <a [routerLink]="['/appointment/details/', element._id]">
-            <button class="btn btn-sm btn-dark me-2">
+            <button mat-icon-button color="accent">
               <i class="fa fa-eye"></i>
             </button>
           </a>
           |
           <a [routerLink]="['/appointment/edit/', element._id]">
-            <button type="button" class="btn btn-sm btn-primary me-2">
+            <button type="button" mat-icon-button color="primary">
               <i class="fa fa-edit"></i>
             </button>
           </a>
           |
           <button
             type="button"
-            class="btn btn-sm btn-danger"
+            mat-icon-button
+            color="warn"
             (click)="deleteAppointment(element._id)"
           >
             <i class="fa fa-trash"></i>

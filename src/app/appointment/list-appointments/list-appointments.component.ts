@@ -19,6 +19,7 @@ export class ListAppointmentsComponent implements OnInit {
     'date',
     'from',
     'to',
+    'action',
   ];
   dataSource: any;
   appointments: Appointment[];
@@ -47,7 +48,7 @@ export class ListAppointmentsComponent implements OnInit {
   }
 
   deleteAppointment(id: number) {
-    if (confirm('Are you sure?')) {
+    if (confirm('Are you sure you want to delete this appointment?')) {
       this.appointmentService.deleteAppointmentById(id).subscribe((data) => {
         console.log(data);
 
