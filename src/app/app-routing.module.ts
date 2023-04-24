@@ -18,6 +18,8 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PatientProfileComponent } from './patient-dashboard/patient-profile/patient-profile.component';
 import { AdminViewComponent } from './admin/admin-view/admin-view.component';
+import { DoctorprofileComponent } from './doctor-profile/doctorprofile/doctorprofile.component';
+import { DashComponent } from './doctors/dash/dash.component';
 //import { ClinicUpdateByManagerComponent } from './clinics/clinic-update-by-manager/clinic-update-by-manager.component';
 
 const routes: Routes = [
@@ -29,6 +31,8 @@ const routes: Routes = [
   { path: 'home', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin/dashboard', component: AdminViewComponent },
+  { path: 'doctor/dashboard', component: DoctorprofileComponent },
+  { path: 'doctor/dash', component: DashComponent },
   // { path: 'patient/profile', component: PatientProfileComponent },
 
   // { path: 'clinics', component: ClinicsListComponent },
@@ -64,6 +68,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./patient-dashboard/patient-dashboard.module').then(
         (m) => m.PatientDashboardModule
+      ),
+  },
+  {
+    path: 'doctors',
+    loadChildren: () =>
+      import('./doctors/doctors.module').then(
+        (m) => m.DoctorModule
       ),
   },
   // { path: 'clinics', component: ClinicsListComponent },

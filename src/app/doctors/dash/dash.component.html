@@ -1,0 +1,36 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+    <mat-toolbar color="primary" class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1 class="example-app-name">{{doctor.firstName + ' '+ doctor.lastName}}</h1>
+      <img class="pic" src="../../../assets/img/doc5.png">
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list>
+            <img class="logo" src="../../../assets/img/clinicLogo.png">
+          <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
+          <ul>
+            <hr >
+            <li>Profile</li>
+            <hr >
+            <li (click)="allAppointement()">Appointment</li>
+            <hr >
+            <li (click)="allPres()">Patient</li>
+            <hr >
+            <li>Prescription</li>
+            <hr >
+          </ul>
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  
+  <!-- <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div> -->
+  

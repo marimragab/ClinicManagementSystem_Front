@@ -1,8 +1,20 @@
-
-export interface address{
-    city:string,  street:string,  building:number
-}
+interface Address {
+    street: string;
+    city: string;
+    state: string;
+    zip: string;
+  }
 
 export class Doctor {
-    constructor(public _id:number, public SSN:number,public firstName:string,public lastName:string,public age: number,public address:address,public specialty:number,public image: string,public phone: string, public clinic:number[],public availability: true){}
+    constructor(public _id:number,
+                 public SSN:number,
+                 public firstName:string,
+                 public lastName:string,
+                 public age:number,
+                 public address:object,
+                 public specialty:number,
+                 public image:string,
+                public phone:string,
+                public clinic:Array<number>,
+                public availability:boolean){}
 }
