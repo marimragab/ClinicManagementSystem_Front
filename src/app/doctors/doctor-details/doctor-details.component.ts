@@ -40,8 +40,8 @@ export class DoctorDetailsComponent {
       this.doctors = data;
       console.log(this.doctors);
       this.doctor = this.doctors.find(
-        (doctor) => doctor._id == this.id
-      ) as Doctor;
+        (doctor) => doctor._id == this.id) as Doctor;
+        
       this.clinic_Id = this.doctor.clinic[0];
       console.log(this.doctor.address['building'])
       console.log(this.doctor.clinic)

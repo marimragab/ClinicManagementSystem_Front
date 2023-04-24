@@ -3,7 +3,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { NgSelectModule } from '@ng-select/ng-select';
-import Swal from 'sweetalert2/dist/sweetalert2.js'; 
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
+
+import { MatIconModule } from "@angular/material/icon";
 //import {FormsModule} from "@angular/forms"
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
@@ -19,7 +23,8 @@ import{DoctorsRoutingModule} from './doctors-routing.module'
 
 import { DoctorAddComponen } from './doctor-add/doctor-add.component';
 import { DoctorEditComponent } from './doctor-edit/doctor-edit.component';
-import {DoctorDetailsComponent} from './doctor-details/doctor-details.component'
+import {DoctorDetailsComponent} from './doctor-details/doctor-details.component';
+import { DashComponent } from './dash/dash.component'
 
 
 
@@ -28,14 +33,15 @@ import {DoctorDetailsComponent} from './doctor-details/doctor-details.component'
     DoctorListComponent,
     DoctorAddComponen,
     DoctorEditComponent,
-    DoctorDetailsComponent
+    DoctorDetailsComponent,
+    DashComponent
   ],
   imports: [
     CommonModule,
-    MatTableModule,
-    MaterialModuel,
-    MatFormFieldModule,ReactiveFormsModule,MatInputModule,MatButtonModule,
-    DoctorsRoutingModule,MatSelectModule,NgSelectModule,FormsModule,MatSlideToggleModule
+    MatTableModule,MatToolbarModule,
+    MaterialModuel,MatIconModule,
+    MatFormFieldModule,ReactiveFormsModule,MatInputModule,MatButtonModule,MatListModule,
+    DoctorsRoutingModule,MatSelectModule,NgSelectModule,FormsModule,MatSlideToggleModule,MatSidenavModule
     
   ],
   exports:[

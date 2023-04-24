@@ -7,7 +7,7 @@ import { Prescription } from '../models/prescription';
 })
 export class PrescriptionService {
 
-  baseurl='http://localhost:8080/specialties/';
+  baseurl='http://localhost:8080/presciptions/';
   
     getAllPrescription() {
         return this.http.get<Prescription[]>(this.baseurl);
