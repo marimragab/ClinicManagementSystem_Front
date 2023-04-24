@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 // import { AppointmentModule } from './appointment/appointment.module';
@@ -28,6 +29,7 @@ import { AppointmentModule } from './appointment/appointment.module';
 import { MatCardModule } from '@angular/material/card';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { PatientDashboardModule } from './patient-dashboard/patient-dashboard.module';
+// import { mat } from './material.module';
 // import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
@@ -46,7 +48,7 @@ import { PatientDashboardModule } from './patient-dashboard/patient-dashboard.mo
     MatSlideToggleModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+ 
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,

@@ -1,1 +1,56 @@
-<p>doctor-details works!</p>
+<div class="main">
+  <div class="second">
+    <img src="../../../assets/img/doc4.png">
+    <p>{{doctor.firstName + " "+ doctor.lastName}}</p>
+   
+    <p style="color:rgb(15, 122, 122) ">{{doctor.specialty['specialty']}}</p>
+    <img  class="back" src="../../../assets/img/icons8-backspace-90.png" [routerLink]="['/doctors']">
+  </div>
+    <table class="table  ">
+<tbody>
+          <tr>
+            <th >Id</th>
+            <td>{{doctor._id}}</td>
+          </tr>
+          <tr>
+            <th scope="row">First Name</th>
+            <td>{{doctor.firstName}}</td>
+          </tr>
+          <tr>
+            <th scope="row">last Name</th>
+            <td>{{doctor.lastName}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Age</th>
+            <td>{{doctor.age}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Phone</th>
+            <td>{{doctor.phone}}</td>
+          </tr>
+        
+
+          <tr>
+            <th scope="row">Clinic</th>
+            <td *ngFor="let item of clinics">{{item['location']['city']}}</td>
+          </tr>
+          <tr>
+            <th scope="row">specialty</th>
+            <td>{{doctor.specialty['specialty']}}</td>
+          </tr>
+          <h2>Address</h2>
+          <tr>
+            <th scope="row">street</th>
+            <td> {{this.doctor.address['street']}} </td>
+          </tr>
+          <tr>
+            <th scope="row">City</th>
+            <td> {{this.doctor.address['city']}} </td>
+          </tr>
+          <tr>
+            <th scope="row">Building</th>
+            <td> {{this.doctor.address['building']}} </td>
+          </tr>
+        </tbody>
+      </table>
+</div>

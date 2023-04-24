@@ -8,7 +8,7 @@ import { ClinicEditByAdminComponent } from '../clinics/clinic-edit-by-admin/clin
 import { ClinicsAddComponent } from '../clinics/clinics-add/clinics-add.component';
 import { ClinicsDetailsComponent } from '../clinics/clinics-details/clinics-details.component';
 import { ClinicsListComponent } from '../clinics/clinics-list/clinics-list.component';
-import { DoctorAddComponent } from '../doctors/doctor-add/doctor-add.component';
+import { DoctorAddComponen } from '../doctors/doctor-add/doctor-add.component';
 import { DoctorDetailsComponent } from '../doctors/doctor-details/doctor-details.component';
 import { DoctorEditComponent } from '../doctors/doctor-edit/doctor-edit.component';
 import { DoctorListComponent } from '../doctors/doctor-list/doctor-list.component';
@@ -58,7 +58,7 @@ const routes: Routes = [
 
   { path: 'doctor', component: DoctorListComponent },
   { path: 'doctor/details/:id', component: DoctorDetailsComponent },
-  { path: 'doctor/add', component: DoctorAddComponent },
+  { path: 'doctor/add', component: DoctorAddComponen },
   { path: 'doctor/edit/:id', component: DoctorEditComponent },
 
 

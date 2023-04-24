@@ -49,9 +49,9 @@ export class LoginComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
-      Validators.pattern(
-        `^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$`
-      ),
+      // Validators.pattern(
+      //   `^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$`
+      // ),
     ]),
   });
 
@@ -160,7 +160,13 @@ export class LoginComponent implements OnInit {
         this.doesLoginHasError = false;
 
         if (role == 'patient') this.router.navigateByUrl('/patient');
-        else if (role == 'doctor') this.router.navigateByUrl('/');
+        else if (role == 'doctor'){
+          this.router.navigateByUrl('/doctor/dashboard');
+         
+
+        }
+          
+          
       });
   }
   ngOnInit() {

@@ -1,0 +1,40 @@
+table{
+    position: absolute;
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+p{
+    /* position: absolute; */
+    margin-top: 20px;
+    /* display: inline-block; */
+    margin-left: 60px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.main{
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.second{
+    display: inline-block;
+}
+
+.borderless td, .borderless th {
+    border: none;
+}
+
+td{
+    padding-left: 100px;
+    color:rgb(15, 122, 122) ;
+    font-weight: bold;
+}
+h2{
+    color:rgb(15, 122, 122) ;
+    margin-left: 130px;
+}
+.back{
+    width:60px;
+    margin-top: 160px;
+    margin-left: 90px;
+}
