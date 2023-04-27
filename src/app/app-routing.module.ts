@@ -20,6 +20,7 @@ import { PatientProfileComponent } from './patient-dashboard/patient-profile/pat
 import { AdminViewComponent } from './admin/admin-view/admin-view.component';
 import { DoctorprofileComponent } from './doctor-profile/doctorprofile/doctorprofile.component';
 import { DashComponent } from './doctors/dash/dash.component';
+import {DocAppointComponent} from './doctors/doc-appoint/doc-appoint.component'
 //import { ClinicUpdateByManagerComponent } from './clinics/clinic-update-by-manager/clinic-update-by-manager.component';
 
 const routes: Routes = [
@@ -31,8 +32,8 @@ const routes: Routes = [
   { path: 'home', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin/dashboard', component: AdminViewComponent },
-  { path: 'doctor/dashboard', component: DoctorprofileComponent },
-  { path: 'doctor/dash', component: DashComponent },
+
+  //{path:"docAppoint/:id",component:DocAppointComponent},
   // { path: 'patient/profile', component: PatientProfileComponent },
 
   // { path: 'clinics', component: ClinicsListComponent },
@@ -77,6 +78,13 @@ const routes: Routes = [
         (m) => m.DoctorModule
       ),
   },
+  // {
+  //   path: 'doctor/dash',
+  //   loadChildren: () =>
+  //     import('./doctors/doctors.module').then(
+  //       (m) => m.DoctorModule
+  //     ),
+  // },
   // { path: 'clinics', component: ClinicsListComponent },
   // { path: 'clinics/details/:id', component: ClinicsDetailsComponent },
   // { path: 'clinics/add', component: ClinicsAddComponent },
@@ -108,6 +116,19 @@ const routes: Routes = [
   // { path: 'appointment/edit/:id', component: UpdateAppointmentComponent },
   // { path: 'appointment/list', component: ListAppointmentsComponent },
 ];
+
+
+const route: Routes = [
+  {
+    path: 'doctor/dash',
+    component: DashComponent,
+    children: [
+  { path: 'docAppoint/:id', component: DocAppointComponent }
+    ]
+  
+  }
+];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes), CommonModule],

@@ -16,7 +16,7 @@
             <hr >
             <li>Profile</li>
             <hr >
-            <li (click)="allAppointement()">Appointment</li>
+            <li [routerLink]="['docAppoint', doctorId]">Appointment</li>
             <hr >
             <li (click)="allPres()">Patient</li>
             <hr >
@@ -28,6 +28,7 @@
   
       <mat-sidenav-content>
         <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+        <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>

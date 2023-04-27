@@ -7,6 +7,7 @@ import { DoctorService } from '../../services/doctor.service';
 import { AppointmentService } from '../../services/appointment.service';
 import { PrescriptionService } from '../../services/prescription.service';
 import { ReportService } from '../../services/report.service';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-dash',
@@ -34,7 +35,8 @@ export class DashComponent implements OnDestroy {
     public doctorservice: DoctorService,
     public appointementservice: AppointmentService,
     public prescriptionservice: PrescriptionService,
-    public report: ReportService
+    public report: ReportService,
+    public router:Router
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -69,32 +71,41 @@ export class DashComponent implements OnDestroy {
       console.log(this.doctor);
     });
   }
-  allAppointement() {
-    this.appointementservice.getAllAppointments().subscribe((data) => {
-      this.appointment = data;
-      console.log(this.appointment);
+  // allAppointement() {
+  //   this.appointementservice.getAllAppointments().subscribe((data) => {
+  //     this.appointment = data;
+  //     console.log(this.appointment);
 
-      //this.docAppoint=this.appointment.find((app)=>app.doctorName == this.doctorId) as Appointment[]
-      this.appointment.forEach((a) => {
-        // console.log(a)
-        console.log(a?.doctor);
-        // console.log(this.docAppoint)
-        if (a.doctor == this.doctorId) {
-          this.docAppoint.push(a);
-          // console.log(a)
-          // console.log(a.doctor)
-          console.log(this.docAppoint);
-        }
+  //     //this.docAppoint=this.appointment.find((app)=>app.doctorName == this.doctorId) as Appointment[]
+  //     this.appointment.forEach((a) => {
+  //       // console.log(a)
+  //       console.log(a?.doctor);
+  //       // console.log(this.docAppoint)
+  //       if (a.doctor == this.doctorId) {
+  //         this.docAppoint.push(a);
+  //         // console.log(a)
+  //         // console.log(a.doctor)
+  //         console.log(this.docAppoint);
+  //       }
 
-        // console.log(this.docAppoint)
-      });
-      console.log(this.docAppoint);
-    });
+  //       // console.log(this.docAppoint)
+  //     });
+  //     console.log(this.docAppoint);
+  //   });
+  // }
+  allAppointement(){
+    //this.router.navigateByUrl("/docAppoint/:"+this.doctorId)
+    //[routerLink]="['details', row._id]"
+
+    // // this.prescriptionservice.getAllPrescription().subscribe(a=>{
+    // // this.report.getDailyAppointmentsForDoctor(this.doctorId).subscribe((a) => {
+    // //   console.log(a);
+    // });
   }
-  allPres() {
-    // this.prescriptionservice.getAllPrescription().subscribe(a=>{
-    this.report.getDailyAppointmentsForDoctor(this.doctorId).subscribe((a) => {
+  allPres(){
+    this.report.getDoctorAppointmentsOnDay("8/4/2023", this.doctorId).subscribe(a=>{
       console.log(a);
-    });
+
+    })
   }
 }
