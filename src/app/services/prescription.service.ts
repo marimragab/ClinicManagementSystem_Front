@@ -19,7 +19,7 @@ export class PrescriptionService {
         return this.http.get<Prescription[]>(this.baseurl + clinic);
       }
       getPrescriptionByDoctorId(doctor: number) {
-        return this.http.get<Prescription[]>(this.baseurl + doctor);
+        return this.http.get<Prescription[]>(this.baseurl+"doctor/" + doctor);
       }
       getPrescriptionByPatientId(patient: number) {
         return this.http.get<Prescription[]>(this.baseurl + patient);

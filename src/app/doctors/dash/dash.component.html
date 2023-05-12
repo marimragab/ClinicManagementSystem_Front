@@ -18,9 +18,13 @@
             <hr >
             <li [routerLink]="['docAppoint', doctorId]">Appointment</li>
             <hr >
-            <li (click)="allPres()">Patient</li>
+            <li >Patient</li>
             <hr >
-            <li>Prescription</li>
+            <li (click)=toggleDisplayDiv() >Prescription</li>
+            <ul  [hidden]="isShowDiv" class="sub">
+              <li [routerLink]="['docPres', doctorId]"> +Prescriptions</li>
+              <li [routerLink]="['addpress', doctorId]"> +New Prescription</li>
+            </ul>
             <hr >
           </ul>
         </mat-nav-list>

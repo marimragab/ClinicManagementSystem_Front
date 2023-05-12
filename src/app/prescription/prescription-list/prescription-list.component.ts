@@ -34,8 +34,8 @@ export class PrescriptionListComponent {
   @ViewChild(MatSort) sort!: MatSort;
   ngOnInit() {
     this.prescService.getAllPrescription().subscribe((data: any) => {
-      this.pres = data.Data;
-      console.log(data.Data);
+      this.pres = data;
+      console.log(this.pres);
       this.dataSource = new MatTableDataSource(this.pres);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;

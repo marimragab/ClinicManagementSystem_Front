@@ -1,0 +1,189 @@
+<div class="form-container" style="display: flex">
+  <form [formGroup]="presForm" (ngSubmit)="onSubmit()" style="flex: 1">
+    <div style="flex: 1">
+      <img src="../../../assets/img/heart.png" width="150px" height="150px" />
+      <h1>New Prescription</h1>
+    </div>
+
+    <div class="form-group">
+      <!-- Clinic -->
+      <label for="clinic">Clinic</label>
+      <mat-form-field appearance="fill">
+        <mat-label>Clinics</mat-label>
+        <mat-select formControlName="clinic">
+          <mat-option
+            *ngFor="let clinic of clinics"
+            [value]="clinic._id"
+            (click)="onSelectionChanged($event, clinic._id)"
+            >{{ clinic.location.city }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <div
+        *ngIf="
+          presForm.controls['clinic'].invalid &&
+          (presForm.controls['clinic'].dirty ||
+            presForm.controls['clinic'].touched)
+        "
+      >
+        <div
+          class="error"
+          *ngIf="presForm.controls['clinic'].hasError('required')"
+        >
+          clinic is required.
+        </div>
+      </div>
+
+      <label for="patient">patient</label>
+      <mat-form-field appearance="fill">
+        <mat-label>Patient</mat-label>
+        <mat-select formControlName="patient">
+          <mat-option
+            *ngFor="let patient of patients"
+            [value]="patient._id"
+            (click)="onSelectionChange($event, patient._id)"
+            >{{ patient.firstName + " " + patient.lastName }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <div
+        *ngIf="
+          presForm.controls['patient'].invalid &&
+          (presForm.controls['patient'].dirty ||
+            presForm.controls['patient'].touched)
+        "
+      >
+        <div
+          class="error"
+          *ngIf="presForm.controls['patient'].hasError('required')"
+        >
+          patient is required.
+        </div>
+      </div>
+
+      <label for="medicine">medicine</label>
+      <div formArrayName="medicine">
+        <div
+          *ngFor="
+            let medicine of presForm.get('medicine')['controls'];
+            let i = index
+          "
+        >
+          <div [formGroupName]="i">
+            <mat-form-field appearance="fill">
+              <mat-label>medicine</mat-label>
+              <mat-select formControlName="medicineId">
+                <mat-option
+                  *ngFor="let medicine of medicines"
+                  [value]="medicine._id"
+                  (click)="onSelectionChange($event, medicine._id)"
+                  >{{ medicine.name }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+            <div
+              *ngIf="
+                medicine.controls['medicineId'].invalid &&
+                (medicine.controls['medicineId'].dirty ||
+                  medicine.controls['medicineId'].touched)
+              "
+            >
+              <div
+                class="error"
+                *ngIf="medicine.controls['medicineId'].hasError('required')"
+              >
+                medicine is required.
+              </div>
+            </div>
+
+            <label for="quantity">Medicine Dosage</label>
+            <input
+              class="my-text"
+              type="text"
+              id="quantity"
+              formControlName="quantity"
+            />
+            <div
+              *ngIf="
+                medicine.controls['quantity'].invalid &&
+                (medicine.controls['quantity'].dirty ||
+                  medicine.controls['quantity'].touched)
+              "
+            >
+              <div
+                class="error"
+                *ngIf="medicine.controls['quantity'].hasError('required')"
+              >
+                quantity is required.
+              </div>
+              <div
+                class="error"
+                *ngIf="medicine.controls['quantity'].errors['minlength']"
+              >
+                Min Length is 5
+              </div>
+            </div>
+
+            <label for="medicineDosage">Medicine Frequency</label>
+            <input
+              type="text"
+              id="medicineDosage"
+              formControlName="medicineDosage"
+              class="my-text"
+            />
+            <div
+              *ngIf="
+                medicine.controls['medicineDosage'].invalid &&
+                (medicine.controls['medicineDosage'].dirty ||
+                  medicine.controls['medicineDosage'].touched)
+              "
+            >
+              <div
+                class="error"
+                *ngIf="medicine.controls['medicineDosage'].hasError('required')"
+              >
+                medicineDosage is required.
+              </div>
+              <div
+                class="error"
+                *ngIf="medicine.controls['medicineDosage'].errors['minlength']"
+              >
+                Min Length is 5
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- firstName  -->
+
+      <label for="myText">Notes</label>
+      <input id="myText" type="text" formControlName="notes" class="my-text" />
+      <!-- validation  -->
+      <div
+        *ngIf="
+          presForm.controls['notes'].invalid &&
+          (presForm.controls['notes'].dirty ||
+            presForm.controls['notes'].touched)
+        "
+      >
+        <div
+          class="error"
+          *ngIf="presForm.controls['notes'].hasError('required')"
+        >
+          Notes is required.
+        </div>
+        <div
+          class="alert alert-danger error"
+          *ngIf="presForm.controls['notes'].errors['minlength']"
+        >
+          Min Length is 5
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" (click)="onSubmit()">Add</button>
+
+    <button type="submit" (click)="back()">Back</button>
+  </form>
+</div>

@@ -42,7 +42,9 @@ import { DoctorAddComponen } from './doctor-add/doctor-add.component';
 import { DoctorEditComponent } from './doctor-edit/doctor-edit.component';
 import {DoctorDetailsComponent} from './doctor-details/doctor-details.component';
 import { DashComponent } from './dash/dash.component';
-import { DocAppointComponent } from './doc-appoint/doc-appoint.component'
+import { DocAppointComponent } from './doc-appoint/doc-appoint.component';
+import { AddpresComponent } from './addpres/addpres.component';
+import { DocPresComponent } from './doc-pres/doc-pres.component'
 
 
 
@@ -53,7 +55,9 @@ import { DocAppointComponent } from './doc-appoint/doc-appoint.component'
     DoctorEditComponent,
     DoctorDetailsComponent,
     DashComponent,
-    DocAppointComponent
+    DocAppointComponent,
+    AddpresComponent,
+    DocPresComponent
   ],
   imports: [
     CommonModule,

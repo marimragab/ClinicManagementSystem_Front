@@ -16,15 +16,15 @@
       <!-- Fruit Column -->
       <ng-container matColumnDef="clinic">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Clinic</th>
-        <td mat-cell *matCellDef="let row">{{ row.clinic }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.clinic.location.city }}</td>
       </ng-container>
       <ng-container matColumnDef="doctor">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Doctor</th>
-        <td mat-cell *matCellDef="let row">{{ row.doctor }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.doctor}}</td>
       </ng-container>
       <ng-container matColumnDef="patient">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Patient</th>
-        <td mat-cell *matCellDef="let row">{{ row.patient }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.patient.firstName+ " "+ row.patient.lastName }}</td>
       </ng-container>
  
    

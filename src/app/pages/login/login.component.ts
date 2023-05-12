@@ -161,7 +161,7 @@ export class LoginComponent implements OnInit {
 
         if (role == 'patient') this.router.navigateByUrl('/patient');
         else if (role == 'doctor'){
-          this.router.navigateByUrl('/doctor/dash');
+          this.router.navigateByUrl('doctors/dash');
          
 
         }

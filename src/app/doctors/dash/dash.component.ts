@@ -20,7 +20,7 @@ export class DashComponent implements OnDestroy {
   doctorId: number;
   appointment: Appointment[] = [];
   docAppoint: Appointment[] = [];
-
+  isShowDiv:boolean=true
   /** @title Responsive sidenav */
 
   mobileQuery: MediaQueryList;
@@ -108,4 +108,8 @@ export class DashComponent implements OnDestroy {
 
     })
   }
+
+  toggleDisplayDiv() {  
+    this.isShowDiv = !this.isShowDiv;  
+  } 
 }
